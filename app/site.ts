@@ -1,11 +1,15 @@
 /** Central place for external URLs so they're not scattered across the site. */
 
+/** Production home of the docs + marketing site. */
+export const SITE_URL = "https://blackchalk.design";
+
 export const GITHUB_URL = "https://github.com/free-agent83/blackchalk";
 
 /**
- * Storybook is the component workshop / "full playground". It isn't deployed yet —
- * this points at the repo for now so the link is live, not dead. Swap to the real
- * Storybook URL (e.g. storybook.blackchalk.dev) once it's hosted.
+ * Storybook is the component workshop / "full playground". Target home is the
+ * subdomain storybook.blackchalk.design (a second Vercel project building
+ * `npm run build-storybook`). Until that's deployed, point at the repo so the link
+ * is live, not dead — then flip this one line to `https://storybook.blackchalk.design`.
  */
 export const STORYBOOK_URL = GITHUB_URL;
 
