@@ -1,0 +1,29 @@
+---
+title: Theming
+description: Single-hue ramp, light and dark modes.
+---
+
+blackchalk is monochrome by design: a single-hue ramp drives every surface, border,
+and text color. Switch the whole tree by wrapping it in `SketchThemeProvider`.
+
+```tsx
+import { SketchThemeProvider, defaultTheme, darkTheme } from "blackchalk";
+
+export function App() {
+  return (
+    <SketchThemeProvider theme={darkTheme}>
+      {/* tokens inside automatically invert */}
+    </SketchThemeProvider>
+  );
+}
+```
+
+## Inverted surfaces
+
+For a single highlighted card on an otherwise light page, use `inverted` instead of a
+nested provider — the tokens flip locally so content authored with the theme colors
+just works:
+
+```tsx
+<SketchCard inverted>Featured</SketchCard>
+```

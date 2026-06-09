@@ -1,0 +1,33 @@
+---
+title: Introduction
+description: Hand-drawn, monochrome React UI components built on rough.js.
+---
+
+**blackchalk** is a low-fidelity "sketchy" component library — wireframe-style UI that
+looks deliberately unfinished, so people react to the idea instead of the pixels.
+
+- **Hand-drawn** — every surface is rendered with [rough.js](https://roughjs.com/).
+- **Monochrome & themeable** — a single-hue ramp with light/dark modes.
+- **SSR-friendly** — no runtime CSS-in-JS.
+
+## Quick start
+
+```bash
+npm install blackchalk
+```
+
+```tsx
+import { SketchButton, SketchCard } from "blackchalk";
+import "blackchalk/styles.css";
+
+export default function App() {
+  return (
+    <SketchCard>
+      <SketchButton variant="primary">Click me</SketchButton>
+    </SketchCard>
+  );
+}
+```
+
+Continue to [Installation](/docs/installation) for the full setup, or jump straight to
+the [components](/docs/components/button).

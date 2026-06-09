@@ -1,0 +1,38 @@
+---
+title: Installation
+description: Add blackchalk to a React or Next.js app.
+---
+
+## Install
+
+```bash
+npm install blackchalk
+```
+
+blackchalk has `react` and `react-dom` (>=18) as peer dependencies.
+
+## Import the stylesheet
+
+The components ship a single stylesheet. Import it once, near your app root:
+
+```tsx
+import "blackchalk/styles.css";
+```
+
+## Use a component
+
+```tsx
+import { SketchButton } from "blackchalk";
+
+export function Example() {
+  return <SketchButton variant="primary">Get started</SketchButton>;
+}
+```
+
+## Next.js (App Router) note
+
+blackchalk components draw their strokes on the client (rough.js + `ResizeObserver`),
+so render them inside a Client Component — add `"use client"` at the top of the file
+that imports blackchalk components, or wrap them in one.
+
+See [Theming](/docs/theming) to switch between light and dark.

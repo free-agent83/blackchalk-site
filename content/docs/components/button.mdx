@@ -1,0 +1,35 @@
+---
+title: Button
+description: SketchButton — a hand-drawn button in three variants.
+---
+
+`SketchButton` renders a real `<button>` with a rough.js stroke, so it stays fully
+accessible while looking sketched.
+
+```tsx
+import { SketchButton } from "blackchalk";
+
+<SketchButton variant="primary" onClick={() => {}}>
+  Primary
+</SketchButton>;
+```
+
+## Variants
+
+| Variant     | Use for                          |
+| ----------- | -------------------------------- |
+| `primary`   | The main action on a surface     |
+| `secondary` | Supporting actions               |
+| `tertiary`  | Low-emphasis / inline actions    |
+
+## Props
+
+| Prop       | Type                                       | Default     |
+| ---------- | ------------------------------------------ | ----------- |
+| `variant`  | `"primary" \| "secondary" \| "tertiary"`   | `"primary"` |
+| `disabled` | `boolean`                                  | `false`     |
+| `onClick`  | `(e) => void`                              | —           |
+| `fill`     | `string`                                   | —           |
+
+> The full interactive matrix of states lives in
+> [Storybook](https://storybook.js.org/) — link it here once it's deployed.
