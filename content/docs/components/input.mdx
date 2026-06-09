@@ -1,0 +1,35 @@
+---
+title: Input
+description: SketchInput — a hand-drawn text field. Type in the preview.
+---
+
+`SketchInput` is a real `<input>` under a rough.js border. It's uncontrolled (and so
+typeable) unless you supply both `value` and `onChange`.
+
+## Default
+
+The preview is live — click and type:
+
+<ComponentPreview
+  code={`import { SketchInput } from "blackchalk";
+
+<SketchInput placeholder="Sketch something…" />`}
+>
+  <SketchInput placeholder="Sketch something…" />
+</ComponentPreview>
+
+## Disabled
+
+<ComponentPreview code={`<SketchInput placeholder="Unavailable" disabled />`}>
+  <SketchInput placeholder="Unavailable" disabled />
+</ComponentPreview>
+
+## Props
+
+| Prop          | Type                       | Default  |
+| ------------- | -------------------------- | -------- |
+| `value`       | `string`                   | —        |
+| `placeholder` | `string`                   | —        |
+| `type`        | `string`                   | `"text"` |
+| `disabled`    | `boolean`                  | `false`  |
+| `onChange`    | `(value: string) => void`  | —        |

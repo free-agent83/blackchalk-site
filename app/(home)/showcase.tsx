@@ -1,21 +1,17 @@
 "use client";
 
-import {
-  SketchBadge,
-  SketchButton,
-  SketchCard,
-  SketchThemeProvider,
-  defaultTheme,
-} from "blackchalk";
+import { SketchBadge, SketchButton, SketchCard } from "blackchalk";
+import { SketchTheme } from "@/app/components/sketch-theme";
 
 /**
  * Live blackchalk components, rendered behind a client boundary because the
  * library uses ResizeObserver + effects to draw its rough.js strokes.
  * This is the whole pitch: the marketing surface is built from the library.
+ * <SketchTheme> couples it to the global light/dark switch.
  */
 export function Showcase() {
   return (
-    <SketchThemeProvider theme={defaultTheme}>
+    <SketchTheme>
       <div
         style={{
           display: "grid",
@@ -46,6 +42,6 @@ export function Showcase() {
           </div>
         </SketchCard>
       </div>
-    </SketchThemeProvider>
+    </SketchTheme>
   );
 }

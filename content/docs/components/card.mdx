@@ -1,0 +1,49 @@
+---
+title: Card
+description: SketchCard — a hand-drawn surface, with an optional inverted variant.
+---
+
+`SketchCard` draws a rough.js border around its content. Pass `inverted` to render a
+dark, highlighted surface where the theme flips locally — content authored with the
+theme colors inverts automatically.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchCard, SketchButton, SketchBadge } from "blackchalk";
+
+<SketchCard>
+  <SketchBadge>primitive</SketchBadge>
+  <SketchButton variant="primary">Action</SketchButton>
+</SketchCard>`}
+>
+  <SketchCard>
+    <div style={{ display: "grid", gap: "0.75rem", padding: "0.25rem", placeItems: "start" }}>
+      <SketchBadge>primitive</SketchBadge>
+      <SketchButton variant="primary">Action</SketchButton>
+    </div>
+  </SketchCard>
+</ComponentPreview>
+
+## Inverted
+
+<ComponentPreview
+  code={`<SketchCard inverted>
+  <SketchBadge variant="muted">themeable</SketchBadge>
+  <p>Tokens flip automatically.</p>
+</SketchCard>`}
+>
+  <SketchCard inverted>
+    <div style={{ display: "grid", gap: "0.5rem", padding: "0.25rem", maxWidth: 220 }}>
+      <SketchBadge variant="muted">themeable</SketchBadge>
+      <p style={{ margin: 0, fontSize: "0.9rem" }}>Tokens flip automatically.</p>
+    </div>
+  </SketchCard>
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type      | Default | Notes                                            |
+| ---------- | --------- | ------- | ------------------------------------------------ |
+| `inverted` | `boolean` | `false` | Dark highlighted surface; content inverts.       |
+| `fill`     | `string`  | —       | Solid fill drawn behind content.                 |

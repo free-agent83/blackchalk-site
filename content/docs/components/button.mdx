@@ -6,21 +6,29 @@ description: SketchButton — a hand-drawn button in three variants.
 `SketchButton` renders a real `<button>` with a rough.js stroke, so it stays fully
 accessible while looking sketched.
 
-```tsx
-import { SketchButton } from "blackchalk";
-
-<SketchButton variant="primary" onClick={() => {}}>
-  Primary
-</SketchButton>;
-```
-
 ## Variants
 
-| Variant     | Use for                          |
-| ----------- | -------------------------------- |
-| `primary`   | The main action on a surface     |
-| `secondary` | Supporting actions               |
-| `tertiary`  | Low-emphasis / inline actions    |
+<ComponentPreview
+  code={`import { SketchButton } from "blackchalk";
+
+<SketchButton variant="primary">Primary</SketchButton>
+<SketchButton variant="secondary">Secondary</SketchButton>
+<SketchButton variant="tertiary">Tertiary</SketchButton>`}
+>
+  <SketchButton variant="primary">Primary</SketchButton>
+  <SketchButton variant="secondary">Secondary</SketchButton>
+  <SketchButton variant="tertiary">Tertiary</SketchButton>
+</ComponentPreview>
+
+## Disabled
+
+<ComponentPreview
+  code={`<SketchButton variant="primary" disabled>Can't click</SketchButton>`}
+>
+  <SketchButton variant="primary" disabled>
+    Can't click
+  </SketchButton>
+</ComponentPreview>
 
 ## Props
 
@@ -31,5 +39,5 @@ import { SketchButton } from "blackchalk";
 | `onClick`  | `(e) => void`                              | —           |
 | `fill`     | `string`                                   | —           |
 
-> The full interactive matrix of states lives in
-> [Storybook](https://storybook.js.org/) — link it here once it's deployed.
+See every state in the [Storybook playground](https://github.com/free-agent83/blackchalk),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/primitives/SketchButton.tsx).

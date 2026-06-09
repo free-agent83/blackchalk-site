@@ -1,0 +1,40 @@
+---
+title: Modal
+description: SketchModal — a hand-drawn dialog. Open it in the preview.
+---
+
+`SketchModal` is a controlled dialog: drive it with `open` and `onClose`. It closes on
+`Escape`. The preview below wires up the open/close state for you.
+
+<ComponentPreview
+  paper={false}
+  code={`import { useState } from "react";
+import { SketchButton, SketchModal } from "blackchalk";
+
+function Example() {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <SketchButton variant="primary" onClick={() => setOpen(true)}>
+        Open modal
+      </SketchButton>
+      <SketchModal open={open} onClose={() => setOpen(false)} title="Delete sketch?">
+        <p>This can't be undone.</p>
+        <SketchButton variant="primary" onClick={() => setOpen(false)}>
+          Delete
+        </SketchButton>
+      </SketchModal>
+    </>
+  );
+}`}
+>
+  <ModalDemo />
+</ComponentPreview>
+
+## Props
+
+| Prop      | Type         | Default | Notes                          |
+| --------- | ------------ | ------- | ------------------------------ |
+| `open`    | `boolean`    | —       | Required. Controls visibility. |
+| `onClose` | `() => void` | —       | Required. Fired on Escape/close. |
+| `title`   | `string`     | —       | Optional heading.              |
