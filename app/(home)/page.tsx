@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { GITHUB_URL } from "@/app/site";
+import { Cta } from "./cta";
 import { Features } from "./features";
 import { Showcase } from "./showcase";
 import { TechStrip } from "./tech-strip";
@@ -15,7 +16,12 @@ export default function HomePage() {
         <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-6xl">
           Hand-drawn React UI,
           <br />
-          deliberately unfinished.
+          <span
+            className="font-normal tracking-normal"
+            style={{ fontFamily: "var(--sketch-font)" }}
+          >
+            deliberately unfinished.
+          </span>
         </h1>
         <p className="max-w-2xl text-balance text-lg text-fd-muted-foreground">
           blackchalk is a low-fidelity, monochrome component library. Wireframe-style
@@ -50,10 +56,7 @@ export default function HomePage() {
       </section>
 
       {/* Live showcase — built from the library itself */}
-      <section className="mx-auto w-full max-w-5xl px-4 pb-20">
-        <p className="mb-8 text-center text-sm uppercase tracking-widest text-fd-muted-foreground">
-          Everything below is a real blackchalk component
-        </p>
+      <section className="mx-auto w-full max-w-4xl px-4 pb-20">
         <Showcase />
       </section>
 
@@ -66,28 +69,8 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="mx-auto mb-24 w-full max-w-3xl px-4 text-center">
-        <div className="rounded-2xl border px-6 py-12">
-          <h2 className="text-2xl font-bold tracking-tight">Sketch your next idea</h2>
-          <p className="mx-auto mt-2 max-w-md text-fd-muted-foreground">
-            Install the package, import the stylesheet, and start wireframing in real
-            React.
-          </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <Link
-              href="/docs/installation"
-              className="rounded-lg bg-fd-primary px-5 py-2.5 text-sm font-medium text-fd-primary-foreground"
-            >
-              Get started
-            </Link>
-            <Link
-              href="/docs"
-              className="rounded-lg border px-5 py-2.5 text-sm font-medium"
-            >
-              Browse components
-            </Link>
-          </div>
-        </div>
+      <section className="mx-auto mb-24 w-full max-w-3xl px-4">
+        <Cta />
       </section>
     </main>
   );

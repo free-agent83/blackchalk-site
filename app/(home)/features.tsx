@@ -1,5 +1,3 @@
-/** Feature grid for the landing page — the "why blackchalk" pitch, clean frame. */
-
 const FEATURES = [
   {
     title: "Hand-drawn",
