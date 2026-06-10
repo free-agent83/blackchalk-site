@@ -4,3 +4,9 @@
 
 /* Make Tailwind aware of fumadocs-ui class names */
 @source "../node_modules/fumadocs-ui/dist/**/*.js";
+
+/* Feed the next/font variable (Caveat, loaded in layout.tsx) into blackchalk's
+ * single font slot. Falls back to a plain Caveat reference, then generic cursive. */
+:root {
+  --sketch-font: var(--font-sketch, "Caveat", cursive);
+}

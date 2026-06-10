@@ -24,10 +24,16 @@ export function SketchTheme({
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
-  const theme = mounted && resolvedTheme === "dark" ? darkTheme : defaultTheme;
+  const base = mounted && resolvedTheme === "dark" ? darkTheme : defaultTheme;
+
+  // Strip the theme's hardcoded `font` so it doesn't write `--sketch-font` inline
+  // and shadow the host's value (the site loads Caveat via `--sketch-font`). The
+  // published themes still pin a font; once blackchalk ships font-less themes this
+  // becomes a harmless no-op.
+  const { font: _font, ...theme } = base;
 
   return (
-    <SketchThemeProvider theme={theme} paper={paper}>
+    <SketchThemeProvider theme={theme} paper={paper} style={{ fontFamily: "var(--sketch-font)" }}>
       {children}
     </SketchThemeProvider>
   );
