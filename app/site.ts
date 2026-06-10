@@ -6,12 +6,10 @@ export const SITE_URL = "https://blackchalk.design";
 export const GITHUB_URL = "https://github.com/free-agent83/blackchalk";
 
 /**
- * Storybook is the component workshop / "full playground". Target home is the
- * subdomain storybook.blackchalk.design (a second Vercel project building
- * `npm run build-storybook`). Until that's deployed, point at the repo so the link
- * is live, not dead — then flip this one line to `https://storybook.blackchalk.design`.
+ * Storybook is the component workshop / "full playground", deployed as a second
+ * Vercel project (from the library repo) building `npm run build-storybook`.
  */
-export const STORYBOOK_URL = GITHUB_URL;
+export const STORYBOOK_URL = "https://storybook.blackchalk.design";
 
 /** Build a link to a component's source file on GitHub. */
 export function sourceUrl(path: string) {
