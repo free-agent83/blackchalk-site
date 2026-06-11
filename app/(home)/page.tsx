@@ -16,11 +16,12 @@ export default function HomePage() {
         <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-6xl">
           Hand-drawn React UI,
           <br />
+          deliberately{" "}
           <span
             className="font-normal tracking-normal"
             style={{ fontFamily: "var(--sketch-font)" }}
           >
-            deliberately unfinished.
+            unfinished.
           </span>
         </h1>
         <p className="max-w-2xl text-balance text-lg text-fd-muted-foreground">
@@ -31,13 +32,13 @@ export default function HomePage() {
         <div className="flex flex-wrap items-center justify-center gap-3">
           <Link
             href="/docs"
-            className="rounded-lg bg-fd-primary px-5 py-2.5 text-sm font-medium text-fd-primary-foreground"
+            className="rounded-lg bg-fd-primary px-5 py-2.5 text-sm font-medium text-fd-primary-foreground transition-colors hover:bg-fd-primary/90"
           >
             Read the docs
           </Link>
           <Link
             href={GITHUB_URL}
-            className="rounded-lg border px-5 py-2.5 text-sm font-medium"
+            className="rounded-lg border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-fd-accent hover:text-fd-accent-foreground"
           >
             View on GitHub
           </Link>
@@ -56,7 +57,7 @@ export default function HomePage() {
       </section>
 
       {/* Live showcase — built from the library itself */}
-      <section className="mx-auto w-full max-w-4xl px-4 pb-20">
+      <section className="mx-auto w-full max-w-5xl px-4 pb-20">
         <Showcase />
       </section>
 
