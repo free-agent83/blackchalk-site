@@ -1,0 +1,72 @@
+---
+title: Select
+description: SketchSelect — a hand-drawn dropdown select with a rough.js trigger and animated panel.
+---
+
+`SketchSelect` renders a rough.js bordered trigger that opens an animated dropdown
+panel — a sketchy alternative to a native `<select>`. Pass `options` and an optional
+`selected` value; wire `onChange` to make it controlled.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchSelect } from "blackchalk";
+
+const options = [
+  { value: "apple",  label: "Apple"  },
+  { value: "banana", label: "Banana" },
+  { value: "cherry", label: "Cherry" },
+  { value: "date",   label: "Date"   },
+];
+
+<div style={{ width: 240 }}>
+  <SketchSelect options={options} selected="apple" />
+</div>`}
+>
+  <div style={{ width: 240 }}>
+    <SketchSelect
+      options={[
+        { value: "apple",  label: "Apple"  },
+        { value: "banana", label: "Banana" },
+        { value: "cherry", label: "Cherry" },
+        { value: "date",   label: "Date"   },
+      ]}
+      selected="apple"
+    />
+  </div>
+</ComponentPreview>
+
+## Disabled
+
+<ComponentPreview
+  code={`<div style={{ width: 240 }}>
+  <SketchSelect options={options} selected="banana" disabled />
+</div>`}
+>
+  <div style={{ width: 240 }}>
+    <SketchSelect
+      options={[
+        { value: "apple",  label: "Apple"  },
+        { value: "banana", label: "Banana" },
+        { value: "cherry", label: "Cherry" },
+        { value: "date",   label: "Date"   },
+      ]}
+      selected="banana"
+      disabled
+    />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop        | Type                                    | Default |
+| ----------- | --------------------------------------- | ------- |
+| `options`   | `{ value: string; label: string }[]`    | —       |
+| `selected`  | `string`                                | —       |
+| `onChange`  | `(value: string) => void`               | —       |
+| `disabled`  | `boolean`                               | —       |
+| `className` | `string`                                | —       |
+| `style`     | `CSSProperties`                         | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/primitives-sketchselect--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/primitives/SketchSelect.tsx).

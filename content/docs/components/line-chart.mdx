@@ -1,0 +1,83 @@
+---
+title: Line Chart
+description: SketchLineChart — a hand-drawn line chart with sketched axes and data points.
+---
+
+`SketchLineChart` plots a series of labelled values as a rough.js line with sketched axes
+and filled data-point circles. It's fluid — it fills the width of its container, so wrap
+it to size it. Pass `area` to shade the region under the line.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchLineChart } from "blackchalk";
+
+<SketchLineChart
+  data={[
+    { label: "Mon", value: 12 },
+    { label: "Tue", value: 28 },
+    { label: "Wed", value: 19 },
+    { label: "Thu", value: 44 },
+    { label: "Fri", value: 33 },
+    { label: "Sat", value: 51 },
+  ]}
+/>`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchLineChart
+      data={[
+        { label: "Mon", value: 12 },
+        { label: "Tue", value: 28 },
+        { label: "Wed", value: 19 },
+        { label: "Thu", value: 44 },
+        { label: "Fri", value: 33 },
+        { label: "Sat", value: 51 },
+      ]}
+    />
+  </div>
+</ComponentPreview>
+
+## Area
+
+Pass `area` to fill the region beneath the line.
+
+<ComponentPreview
+  code={`import { SketchLineChart } from "blackchalk";
+
+<SketchLineChart
+  data={[
+    { label: "Mon", value: 12 },
+    { label: "Tue", value: 28 },
+    { label: "Wed", value: 19 },
+    { label: "Thu", value: 44 },
+    { label: "Fri", value: 33 },
+    { label: "Sat", value: 51 },
+  ]}
+  area
+/>`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchLineChart
+      data={[
+        { label: "Mon", value: 12 },
+        { label: "Tue", value: 28 },
+        { label: "Wed", value: 19 },
+        { label: "Thu", value: 44 },
+        { label: "Fri", value: 33 },
+        { label: "Sat", value: 51 },
+      ]}
+      area
+    />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop     | Type                                   | Default |
+| -------- | -------------------------------------- | ------- |
+| `data`   | `{ label: string; value: number }[]`   | —       |
+| `height` | `number`                               | `250`   |
+| `area`   | `boolean`                              | `false` |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/charts-sketchlinechart--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/charts/SketchLineChart.tsx).

@@ -1,0 +1,51 @@
+---
+title: Progress
+description: SketchProgress — a hand-drawn progress bar with an optional percentage label.
+---
+
+`SketchProgress` renders a rough.js filled bar inside a sketched outline. It's
+fluid by default — it fills its container — so wrap it to control the width.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchProgress } from "blackchalk";
+
+<div style={{ width: 420, maxWidth: "100%" }}>
+  <SketchProgress value={60} />
+</div>`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchProgress value={60} />
+  </div>
+</ComponentPreview>
+
+## With percentage label
+
+<ComponentPreview
+  code={`import { SketchProgress } from "blackchalk";
+
+<div style={{ width: 420, maxWidth: "100%" }}>
+  <SketchProgress value={42} percentage />
+</div>`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchProgress value={42} percentage />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop         | Type                  | Default  |
+| ------------ | --------------------- | -------- |
+| `value`      | `number`              | `0`      |
+| `min`        | `number`              | `0`      |
+| `max`        | `number`              | `100`    |
+| `percentage` | `boolean`             | —        |
+| `width`      | `number \| string`    | `"100%"` |
+| `height`     | `number`              | `32`     |
+| `className`  | `string`              | —        |
+| `style`      | `CSSProperties`       | —        |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/primitives-sketchprogress--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/primitives/SketchProgress.tsx).

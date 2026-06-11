@@ -1,0 +1,60 @@
+---
+title: Search Input
+description: SketchSearchInput — a hand-drawn search field with a rough.js border and built-in search icon.
+---
+
+`SketchSearchInput` renders a rough.js outlined text field with an embedded search
+icon. It fills the width of its container, so wrap it to control the size. It works
+uncontrolled (typeable out of the box) or fully controlled via `value` + `onChange`.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchSearchInput } from "blackchalk";
+
+<div style={{ width: 280 }}>
+  <SketchSearchInput placeholder="Search…" />
+</div>`}
+>
+  <div style={{ width: 280, maxWidth: "100%" }}>
+    <SketchSearchInput placeholder="Search…" />
+  </div>
+</ComponentPreview>
+
+## Controlled
+
+<ComponentPreview
+  code={`import { useState } from "react";
+import { SketchSearchInput } from "blackchalk";
+
+export function FilterExample() {
+  const [value, setValue] = useState("");
+  return (
+    <div style={{ width: 280 }}>
+      <SketchSearchInput
+        value={value}
+        onChange={setValue}
+        placeholder="Filter results"
+      />
+    </div>
+  );
+}`}
+>
+  <div style={{ width: 280, maxWidth: "100%" }}>
+    <SketchSearchInput placeholder="Filter results" />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop          | Type                      | Default    |
+| ------------- | ------------------------- | ---------- |
+| `value`       | `string`                  | —          |
+| `placeholder` | `string`                  | `"Search…"` |
+| `disabled`    | `boolean`                 | —          |
+| `onChange`    | `(value: string) => void` | —          |
+| `className`   | `string`                  | —          |
+| `style`       | `CSSProperties`           | —          |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/primitives-sketchsearchinput--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/primitives/SketchSearchInput.tsx).

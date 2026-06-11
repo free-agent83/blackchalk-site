@@ -1,0 +1,40 @@
+---
+title: Frame
+description: SketchFrame — a full-viewport hand-drawn card that wraps an entire app screen.
+---
+
+`SketchFrame` centres its children inside a rough.js card that fills the
+viewport, giving the whole screen a paper-on-desk feel. Drop it at the root of
+a page and place your layout inside it.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchFrame } from "blackchalk";
+
+<SketchFrame>
+  <div style={{ padding: 32 }}>
+    <h1 style={{ marginTop: 0 }}>Framed App</h1>
+    <p>Content goes here.</p>
+  </div>
+</SketchFrame>`}
+>
+  <div style={{ width: 480, maxWidth: "100%" }}>
+    <SketchFrame>
+      <div style={{ padding: 32 }}>
+        <h1 style={{ marginTop: 0 }}>Framed App</h1>
+        <p>Content goes here.</p>
+      </div>
+    </SketchFrame>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop        | Type        | Default  |
+| ----------- | ----------- | -------- |
+| `children`  | `ReactNode` | —        |
+| `maxWidth`  | `number`    | `1280`   |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/layout-sketchframe--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/layout/SketchFrame.tsx).

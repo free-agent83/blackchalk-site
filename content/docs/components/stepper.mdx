@@ -1,0 +1,72 @@
+---
+title: Stepper
+description: SketchStepper — a hand-drawn step progress indicator with labelled nodes and connectors.
+---
+
+`SketchStepper` draws a rough.js step indicator — numbered or dot nodes connected by
+sketched lines, with labels and optional sublabels beneath each step. It supports
+horizontal and vertical layouts and is fluid in the horizontal orientation, so wrap
+it to size it.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchStepper } from "blackchalk";
+
+const steps = [
+  { label: "Cart",     sublabel: "Review items" },
+  { label: "Shipping", sublabel: "Enter address" },
+  { label: "Payment",  sublabel: "Add card" },
+  { label: "Confirm",  sublabel: "Place order" },
+];
+
+<div style={{ width: 520, maxWidth: "100%" }}>
+  <SketchStepper steps={steps} currentStep={1} />
+</div>`}
+>
+  <div style={{ width: 520, maxWidth: "100%" }}>
+    <SketchStepper
+      steps={[
+        { label: "Cart",     sublabel: "Review items" },
+        { label: "Shipping", sublabel: "Enter address" },
+        { label: "Payment",  sublabel: "Add card" },
+        { label: "Confirm",  sublabel: "Place order" },
+      ]}
+      currentStep={1}
+    />
+  </div>
+</ComponentPreview>
+
+## Vertical
+
+<ComponentPreview
+  code={`<SketchStepper
+  steps={steps}
+  currentStep={2}
+  orientation="vertical"
+/>`}
+>
+  <SketchStepper
+    steps={[
+      { label: "Cart",     sublabel: "Review items" },
+      { label: "Shipping", sublabel: "Enter address" },
+      { label: "Payment",  sublabel: "Add card" },
+      { label: "Confirm",  sublabel: "Place order" },
+    ]}
+    currentStep={2}
+    orientation="vertical"
+  />
+</ComponentPreview>
+
+## Props
+
+| Prop          | Type                                         | Default        |
+| ------------- | -------------------------------------------- | -------------- |
+| `steps`       | `{ label: string; sublabel?: string }[]`     | —              |
+| `currentStep` | `number`                                     | `0`            |
+| `orientation` | `"horizontal" \| "vertical"`                 | `"horizontal"` |
+| `nodeContent` | `"number" \| "dot"`                          | `"number"`     |
+| `style`       | `CSSProperties`                              | —              |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchstepper--horizontal),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchStepper.tsx).

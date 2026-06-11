@@ -1,0 +1,47 @@
+---
+title: Form Field
+description: SketchFormField — a labelled wrapper that pairs any input with an optional inline error message.
+---
+
+`SketchFormField` composes a label, an arbitrary input child, and an optional error
+message into a single vertical stack. Pass any sketch input (or any element) as
+`children` and it will be laid out consistently with the rest of the sketch system.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchFormField, SketchInput } from "blackchalk";
+
+<SketchFormField label="Email address">
+  <SketchInput placeholder="you@example.com" />
+</SketchFormField>`}
+>
+  <SketchFormField label="Email address">
+    <SketchInput placeholder="you@example.com" />
+  </SketchFormField>
+</ComponentPreview>
+
+## With error
+
+<ComponentPreview
+  code={`import { SketchFormField, SketchInput } from "blackchalk";
+
+<SketchFormField label="Email address" error="Please enter a valid email">
+  <SketchInput placeholder="you@example.com" />
+</SketchFormField>`}
+>
+  <SketchFormField label="Email address" error="Please enter a valid email">
+    <SketchInput placeholder="you@example.com" />
+  </SketchFormField>
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type        | Default |
+| ---------- | ----------- | ------- |
+| `label`    | `string`    | —       |
+| `error`    | `string`    | —       |
+| `children` | `ReactNode` | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchformfield--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchFormField.tsx).

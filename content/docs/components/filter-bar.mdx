@@ -1,0 +1,50 @@
+---
+title: Filter Bar
+description: SketchFilterBar — a row of hand-drawn filter chips with an active state.
+---
+
+`SketchFilterBar` renders a wrapping row of rough.js chip buttons. The active chip
+gets a bolder label and a thicker sketched border; the rest sit at resting weight.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchFilterBar } from "blackchalk";
+
+<SketchFilterBar
+  filters={[
+    { label: "All", active: true },
+    { label: "New" },
+    { label: "Popular" },
+    { label: "Sale" },
+  ]}
+/>`}
+>
+  <SketchFilterBar
+    filters={[
+      { label: "All", active: true },
+      { label: "New" },
+      { label: "Popular" },
+      { label: "Sale" },
+    ]}
+  />
+</ComponentPreview>
+
+## Props
+
+### SketchFilterBar
+
+| Prop      | Type           | Default |
+| --------- | -------------- | ------- |
+| `filters` | `FilterChip[]` | —       |
+
+### FilterChip
+
+| Field     | Type         | Default |
+| --------- | ------------ | ------- |
+| `label`   | `string`     | —       |
+| `active`  | `boolean`    | —       |
+| `onClick` | `() => void` | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/ecommerce-sketchfilterbar-de-wire-target--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/ecommerce/SketchFilterBar.tsx).

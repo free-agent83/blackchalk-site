@@ -1,0 +1,31 @@
+---
+title: Inventory Badge
+description: SketchInventoryBadge — a hand-drawn badge for displaying product stock status.
+---
+
+`SketchInventoryBadge` renders a rough.js badge labelled with a stock state — in
+stock, low stock, or out of stock — switching its visual treatment automatically
+based on the `status` prop.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchInventoryBadge } from "blackchalk";
+
+<SketchInventoryBadge status="in-stock" />
+<SketchInventoryBadge status="low-stock" />
+<SketchInventoryBadge status="out-of-stock" />`}
+>
+  <SketchInventoryBadge status="in-stock" />
+  <SketchInventoryBadge status="low-stock" />
+  <SketchInventoryBadge status="out-of-stock" />
+</ComponentPreview>
+
+## Props
+
+| Prop     | Type                                              | Default |
+| -------- | ------------------------------------------------- | ------- |
+| `status` | `"in-stock" \| "low-stock" \| "out-of-stock"` | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/ecommerce-sketchinventorybadge--in-stock),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/ecommerce/SketchInventoryBadge.tsx).

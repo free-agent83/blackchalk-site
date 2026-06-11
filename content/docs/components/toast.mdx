@@ -1,0 +1,44 @@
+---
+title: Toast
+description: SketchToast — a hand-drawn toast notification that auto-dismisses.
+---
+
+`SketchToast` renders a fixed-position rough.js card that auto-dismisses after
+`duration` ms. It is controlled — pass `visible` and `onClose` to manage its state.
+The companion `useSketchToast` hook wires up the state for you.
+
+## Default
+
+<ComponentPreview
+  code={`import { useState } from "react";
+import { SketchToast, SketchButton } from "blackchalk";
+
+function Demo() {
+  const [visible, setVisible] = useState(false);
+  return (
+    <>
+      <SketchButton onClick={() => setVisible(true)}>Show toast</SketchButton>
+      <SketchToast
+        message="Your draft has been published."
+        visible={visible}
+        onClose={() => setVisible(false)}
+        duration={3000}
+      />
+    </>
+  );
+}`}
+>
+  <ToastDemo />
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type      | Default  |
+| ---------- | --------- | -------- |
+| `message`  | `string`  | —        |
+| `visible`  | `boolean` | —        |
+| `onClose`  | `() => void` | —     |
+| `duration` | `number`  | `3000`   |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/feedback-sketchtoast--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/feedback/SketchToast.tsx).

@@ -1,0 +1,47 @@
+---
+title: Nav Bar
+description: SketchNavBar — a hand-drawn navigation bar with a title and optional action slot.
+---
+
+`SketchNavBar` renders a sketchy top navigation bar: a title on the left, optional
+children (buttons, links, etc.) on the right, and a `SketchDivider` underneath.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchNavBar } from "blackchalk";
+
+<SketchNavBar title="Blackchalk" />`}
+>
+  <div style={{ width: 480, maxWidth: "100%" }}>
+    <SketchNavBar title="Blackchalk" />
+  </div>
+</ComponentPreview>
+
+## With actions
+
+<ComponentPreview
+  code={`import { SketchNavBar, SketchButton } from "blackchalk";
+
+<SketchNavBar title="Blackchalk">
+  <SketchButton>Log in</SketchButton>
+  <SketchButton variant="primary">Sign up</SketchButton>
+</SketchNavBar>`}
+>
+  <div style={{ width: 480, maxWidth: "100%" }}>
+    <SketchNavBar title="Blackchalk">
+      <SketchButton>Log in</SketchButton>
+      <SketchButton variant="primary">Sign up</SketchButton>
+    </SketchNavBar>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type        | Default |
+| ---------- | ----------- | ------- |
+| `title`    | `string`    | —       |
+| `children` | `ReactNode` | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchnavbar--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchNavBar.tsx).

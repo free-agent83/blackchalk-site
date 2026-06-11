@@ -1,0 +1,43 @@
+---
+title: Checkbox
+description: SketchCheckbox — a hand-drawn checkbox with a spring-animated tick mark.
+---
+
+`SketchCheckbox` renders a rough.js box and an animated check mark. It works
+uncontrolled out of the box — pass both `checked` and `onChange` to take full
+control.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchCheckbox } from "blackchalk";
+
+<SketchCheckbox />
+<SketchCheckbox checked={true} />`}
+>
+  <SketchCheckbox />
+  <SketchCheckbox checked={true} />
+</ComponentPreview>
+
+## Disabled
+
+<ComponentPreview
+  code={`import { SketchCheckbox } from "blackchalk";
+
+<SketchCheckbox checked={true} disabled />`}
+>
+  <SketchCheckbox checked={true} disabled />
+</ComponentPreview>
+
+## Props
+
+| Prop        | Type                        | Default |
+| ----------- | --------------------------- | ------- |
+| `checked`   | `boolean`                   | —       |
+| `disabled`  | `boolean`                   | —       |
+| `onChange`  | `(checked: boolean) => void` | —      |
+| `className` | `string`                    | —       |
+| `style`     | `CSSProperties`             | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/primitives-sketchcheckbox--unchecked),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/primitives/SketchCheckbox.tsx).

@@ -1,0 +1,79 @@
+---
+title: Icon Radio Group
+description: SketchIconRadioGroup — a hand-drawn icon-and-label radio selector that works controlled or uncontrolled.
+---
+
+`SketchIconRadioGroup` renders a row (or responsive grid) of sketchy card tiles, each
+showing an icon and label. Clicking a tile selects it. It is self-managing in static
+sketches — pass both `value` and `onChange` to take full control.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchIconRadioGroup } from "blackchalk";
+
+<SketchIconRadioGroup
+  name="layout"
+  options={[
+    { icon: <span>▦</span>, label: "Grid",  value: "grid"  },
+    { icon: <span>≣</span>, label: "List",  value: "list"  },
+    { icon: <span>▭</span>, label: "Cards", value: "cards" },
+  ]}
+/>`}
+>
+  <SketchIconRadioGroup
+    name="layout"
+    options={[
+      { icon: <span>▦</span>, label: "Grid",  value: "grid"  },
+      { icon: <span>≣</span>, label: "List",  value: "list"  },
+      { icon: <span>▭</span>, label: "Cards", value: "cards" },
+    ]}
+  />
+</ComponentPreview>
+
+## Grid layout
+
+Set `grid` to fill a container with evenly-sized tiles. Wrap it to control the width.
+
+<ComponentPreview
+  code={`import { SketchIconRadioGroup } from "blackchalk";
+
+<div style={{ width: 360, maxWidth: "100%" }}>
+  <SketchIconRadioGroup
+    name="size"
+    grid
+    options={[
+      { label: "XS", value: "xs" },
+      { label: "S",  value: "s"  },
+      { label: "M",  value: "m"  },
+      { label: "L",  value: "l"  },
+    ]}
+  />
+</div>`}
+>
+  <div style={{ width: 360, maxWidth: "100%" }}>
+    <SketchIconRadioGroup
+      name="size"
+      grid
+      options={[
+        { label: "XS", value: "xs" },
+        { label: "S",  value: "s"  },
+        { label: "M",  value: "m"  },
+        { label: "L",  value: "l"  },
+      ]}
+    />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type                                                  | Default |
+| ---------- | ----------------------------------------------------- | ------- |
+| `name`     | `string`                                              | —       |
+| `options`  | `{ icon?: ReactNode, label: string, value: string }[]` | —       |
+| `value`    | `string`                                              | —       |
+| `onChange` | `(value: string) => void`                             | —       |
+| `grid`     | `boolean`                                             | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchiconradio--group),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchIconRadio.tsx).

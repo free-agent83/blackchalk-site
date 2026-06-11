@@ -1,0 +1,58 @@
+---
+title: Card Grid
+description: SketchCardGrid — a responsive rough-styled grid for laying out SketchCard items.
+---
+
+`SketchCardGrid` arranges `SketchCard` children in a uniform column grid using
+`SketchGrid` under the hood. It's fluid — it fills its container, so wrap it to
+control width.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchCardGrid } from "blackchalk";
+import { SketchCard } from "blackchalk";
+
+<SketchCardGrid>
+  <SketchCard style={{ padding: 24 }}>
+    <div style={{ fontWeight: 700, marginBottom: 8 }}>Metric 1</div>
+    <div style={{ fontSize: 28 }}>137</div>
+  </SketchCard>
+  <SketchCard style={{ padding: 24 }}>
+    <div style={{ fontWeight: 700, marginBottom: 8 }}>Metric 2</div>
+    <div style={{ fontSize: 28 }}>274</div>
+  </SketchCard>
+  <SketchCard style={{ padding: 24 }}>
+    <div style={{ fontWeight: 700, marginBottom: 8 }}>Metric 3</div>
+    <div style={{ fontSize: 28 }}>411</div>
+  </SketchCard>
+</SketchCardGrid>`}
+>
+  <div style={{ width: 480, maxWidth: "100%" }}>
+    <SketchCardGrid>
+      <SketchCard style={{ padding: 24 }}>
+        <div style={{ fontWeight: 700, marginBottom: 8 }}>Metric 1</div>
+        <div style={{ fontSize: 28 }}>137</div>
+      </SketchCard>
+      <SketchCard style={{ padding: 24 }}>
+        <div style={{ fontWeight: 700, marginBottom: 8 }}>Metric 2</div>
+        <div style={{ fontSize: 28 }}>274</div>
+      </SketchCard>
+      <SketchCard style={{ padding: 24 }}>
+        <div style={{ fontWeight: 700, marginBottom: 8 }}>Metric 3</div>
+        <div style={{ fontSize: 28 }}>411</div>
+      </SketchCard>
+    </SketchCardGrid>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type        | Default |
+| ---------- | ----------- | ------- |
+| `columns`  | `number`    | `3`     |
+| `gap`      | `number`    | `24`    |
+| `children` | `ReactNode` | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/patterns-sketchcardgrid--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/patterns/SketchCardGrid.tsx).

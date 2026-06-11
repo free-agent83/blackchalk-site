@@ -1,0 +1,48 @@
+---
+title: Textarea
+description: SketchTextarea — a hand-drawn multi-line text input.
+---
+
+`SketchTextarea` wraps a `<textarea>` in a rough.js border, giving free-text input
+the same sketched aesthetic as the rest of the design system. It fills the width of
+its container, so wrap it to control sizing. It works uncontrolled out of the box;
+pass both `value` and `onChange` to use it as a controlled input.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchTextarea } from "blackchalk";
+
+<SketchTextarea placeholder="Write your message…" />`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchTextarea placeholder="Write your message…" />
+  </div>
+</ComponentPreview>
+
+## Disabled
+
+<ComponentPreview
+  code={`import { SketchTextarea } from "blackchalk";
+
+<SketchTextarea value="Read only content" disabled />`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchTextarea value="Read only content" disabled />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop          | Type                      | Default |
+| ------------- | ------------------------- | ------- |
+| `value`       | `string`                  | —       |
+| `placeholder` | `string`                  | —       |
+| `disabled`    | `boolean`                 | —       |
+| `rows`        | `number`                  | `4`     |
+| `onChange`    | `(value: string) => void` | —       |
+| `className`   | `string`                  | —       |
+| `style`       | `CSSProperties`           | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/primitives-sketchtextarea--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/primitives/SketchTextarea.tsx).

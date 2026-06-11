@@ -1,0 +1,63 @@
+---
+title: Metric Tile
+description: SketchMetricTile — a hand-drawn stat card with an optional delta and sparkline.
+---
+
+`SketchMetricTile` combines a label, a large value, an optional delta string, and an
+optional sparkline into a single sketched card. It fills the width of its container,
+so wrap it to control the tile width.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchMetricTile } from "blackchalk";
+
+<SketchMetricTile
+  label="Revenue"
+  value="$24,500"
+  delta="+12% vs last month"
+/>`}
+>
+  <div style={{ width: 260, maxWidth: "100%" }}>
+    <SketchMetricTile
+      label="Revenue"
+      value="$24,500"
+      delta="+12% vs last month"
+    />
+  </div>
+</ComponentPreview>
+
+## With sparkline
+
+<ComponentPreview
+  code={`import { SketchMetricTile } from "blackchalk";
+
+<SketchMetricTile
+  label="Active users"
+  value="1,284"
+  delta="+8% this week"
+  data={[4, 8, 6, 10, 9, 14, 12, 18]}
+/>`}
+>
+  <div style={{ width: 260, maxWidth: "100%" }}>
+    <SketchMetricTile
+      label="Active users"
+      value="1,284"
+      delta="+8% this week"
+      data={[4, 8, 6, 10, 9, 14, 12, 18]}
+    />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop      | Type            | Default |
+| --------- | --------------- | ------- |
+| `label`   | `string`        | —       |
+| `value`   | `string`        | —       |
+| `delta`   | `string`        | —       |
+| `data`    | `number[]`      | —       |
+| `style`   | `CSSProperties` | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchmetrictile--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchMetricTile.tsx).

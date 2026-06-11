@@ -1,0 +1,61 @@
+---
+title: Table
+description: SketchTable — a hand-drawn data table with rough.js zebra stripes.
+---
+
+`SketchTable` renders rows and columns inside a `SketchCard`, with every other row
+filled using a rough.js sketch fill. Pass `onRowClick` to make rows interactive.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchTable } from "blackchalk";
+
+const columns = [
+  { key: "name", label: "Name" },
+  { key: "role", label: "Role" },
+  { key: "status", label: "Status" },
+];
+
+const data = [
+  { name: "Ada Lovelace", role: "Engineer", status: "Active" },
+  { name: "Alan Turing", role: "Researcher", status: "Active" },
+  { name: "Grace Hopper", role: "Admiral", status: "Away" },
+];
+
+<SketchTable columns={columns} data={data} />`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchTable
+      columns={[
+        { key: "name", label: "Name" },
+        { key: "role", label: "Role" },
+        { key: "status", label: "Status" },
+      ]}
+      data={[
+        { name: "Ada Lovelace", role: "Engineer", status: "Active" },
+        { name: "Alan Turing", role: "Researcher", status: "Active" },
+        { name: "Grace Hopper", role: "Admiral", status: "Away" },
+      ]}
+    />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop         | Type                                                         | Default |
+| ------------ | ------------------------------------------------------------ | ------- |
+| `columns`    | `{ key: string; label: string; width?: string }[]`          | —       |
+| `data`       | `Record<string, any>[]`                                      | —       |
+| `onRowClick` | `(row: Record<string, any>, index: number) => void`          | —       |
+
+### Column fields
+
+| Field   | Type     | Default |
+| ------- | -------- | ------- |
+| `key`   | `string` | —       |
+| `label` | `string` | —       |
+| `width` | `string` | fluid   |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchtable--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchTable.tsx).

@@ -1,0 +1,92 @@
+---
+title: Radio Group
+description: SketchRadioGroup — a set of hand-drawn radio buttons backed by native inputs for full keyboard and screen-reader support.
+---
+
+`SketchRadioGroup` renders labelled options with a rough.js radio mark — an outer
+circle and a filled inner dot for the selected item. A visually-hidden
+`<input type="radio">` backs each option, so the group works with the keyboard and
+assistive technology without any extra wiring. It runs controlled when both `value`
+and `onChange` are supplied, or uncontrolled otherwise.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchRadioGroup } from "blackchalk";
+import { useState } from "react";
+
+const options = [
+  { label: "Free",  value: "free"  },
+  { label: "Pro",   value: "pro"   },
+  { label: "Team",  value: "team"  },
+];
+
+export default function Demo() {
+  const [plan, setPlan] = useState("free");
+  return (
+    <SketchRadioGroup
+      name="plan"
+      options={options}
+      value={plan}
+      onChange={setPlan}
+    />
+  );
+}`}
+>
+  <SketchRadioGroup
+    name="plan"
+    options={[
+      { label: "Free",  value: "free"  },
+      { label: "Pro",   value: "pro"   },
+      { label: "Team",  value: "team"  },
+    ]}
+    value="free"
+  />
+</ComponentPreview>
+
+## Horizontal
+
+Pass `orientation="horizontal"` to lay the options out in a row.
+
+<ComponentPreview
+  code={`<SketchRadioGroup
+  name="plan"
+  options={options}
+  value={plan}
+  onChange={setPlan}
+  orientation="horizontal"
+/>`}
+>
+  <SketchRadioGroup
+    name="plan-h"
+    options={[
+      { label: "Free",  value: "free"  },
+      { label: "Pro",   value: "pro"   },
+      { label: "Team",  value: "team"  },
+    ]}
+    value="pro"
+    orientation="horizontal"
+  />
+</ComponentPreview>
+
+## Props
+
+| Prop          | Type                                      | Default      |
+| ------------- | ----------------------------------------- | ------------ |
+| `name`        | `string`                                  | —            |
+| `options`     | `SketchRadioOption[]`                     | —            |
+| `value`       | `string`                                  | —            |
+| `onChange`    | `(value: string) => void`                 | —            |
+| `orientation` | `"vertical" \| "horizontal"`              | `"vertical"` |
+| `style`       | `CSSProperties`                           | —            |
+
+### SketchRadioOption
+
+| Field      | Type      | Default |
+| ---------- | --------- | ------- |
+| `label`    | `string`  | —       |
+| `value`    | `string`  | —       |
+| `disabled` | `boolean` | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchradiogroup--vertical),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchRadioGroup.tsx).

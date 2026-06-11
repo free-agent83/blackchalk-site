@@ -1,0 +1,39 @@
+---
+title: Tab
+description: SketchTab — a hand-drawn tab button with an animated active indicator.
+---
+
+`SketchTab` renders a single tab button. When `active` is true it bolds the label,
+lifts it slightly, and draws a rough.js underline that slides between tabs via a
+shared `layoutId`. Compose several tabs in a flex row and toggle `active` to wire
+up navigation.
+
+## Active tab
+
+<ComponentPreview
+  code={`import { SketchTab } from "blackchalk";
+
+<div style={{ display: "flex", width: 320 }}>
+  <SketchTab active>Overview</SketchTab>
+  <SketchTab>Activity</SketchTab>
+  <SketchTab>Settings</SketchTab>
+</div>`}
+>
+  <div style={{ display: "flex", width: 320 }}>
+    <SketchTab active>Overview</SketchTab>
+    <SketchTab>Activity</SketchTab>
+    <SketchTab>Settings</SketchTab>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type            | Default |
+| ---------- | --------------- | ------- |
+| `active`   | `boolean`       | —       |
+| `onClick`  | `() => void`    | —       |
+| `children` | `ReactNode`     | —       |
+| `style`    | `CSSProperties` | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/primitives-sketchtab--active),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/primitives/SketchTab.tsx).

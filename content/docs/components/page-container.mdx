@@ -1,0 +1,60 @@
+---
+title: Page Container
+description: SketchPageContainer — a centred, max-width layout wrapper for page-level content.
+---
+
+`SketchPageContainer` centres its children horizontally within a configurable max-width
+and applies consistent page padding — the standard shell for any full-page sketch layout.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchPageContainer, SketchCard } from "blackchalk";
+
+<SketchPageContainer>
+  <h1 style={{ marginTop: 0 }}>Settings</h1>
+  <SketchCard style={{ padding: 24 }}>
+    Centred, max-width content with consistent page padding.
+  </SketchCard>
+</SketchPageContainer>`}
+>
+  <div style={{ width: 480, maxWidth: "100%" }}>
+    <SketchPageContainer>
+      <h1 style={{ marginTop: 0 }}>Settings</h1>
+      <SketchCard style={{ padding: 24 }}>
+        Centred, max-width content with consistent page padding.
+      </SketchCard>
+    </SketchPageContainer>
+  </div>
+</ComponentPreview>
+
+## Narrow
+
+Pass `maxWidth` to constrain reading-width content such as onboarding flows or forms.
+
+<ComponentPreview
+  code={`import { SketchPageContainer, SketchCard } from "blackchalk";
+
+<SketchPageContainer maxWidth={560}>
+  <h1 style={{ marginTop: 0 }}>Onboarding</h1>
+  <SketchCard style={{ padding: 24 }}>A narrower reading width.</SketchCard>
+</SketchPageContainer>`}
+>
+  <div style={{ width: 480, maxWidth: "100%" }}>
+    <SketchPageContainer maxWidth={560}>
+      <h1 style={{ marginTop: 0 }}>Onboarding</h1>
+      <SketchCard style={{ padding: 24 }}>A narrower reading width.</SketchCard>
+    </SketchPageContainer>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type        | Default |
+| ---------- | ----------- | ------- |
+| `maxWidth` | `number`    | `960`   |
+| `padding`  | `number`    | `32`    |
+| `children` | `ReactNode` | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/patterns-sketchpagecontainer--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/patterns/SketchPageContainer.tsx).

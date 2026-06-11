@@ -1,0 +1,116 @@
+---
+title: App Shell
+description: SketchAppShell — a layout wrapper that arranges an optional sidebar and top bar around main page content.
+---
+
+`SketchAppShell` composes a full-page layout with an optional sticky top bar and
+collapsible sidebar. It uses a flex-wrap strategy so the sidebar and content sit
+side-by-side on wide viewports and stack on narrow ones. The shell has no
+background of its own, letting the global sketch paper texture show through.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchAppShell, SketchCard } from "blackchalk";
+
+const Sidebar = () => (
+  <SketchCard style={{ width: 200, height: "100%", padding: 16 }}>
+    <div style={{ fontWeight: 700, marginBottom: 12 }}>Menu</div>
+    <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+      <span>Dashboard</span>
+      <span>Projects</span>
+    </div>
+  </SketchCard>
+);
+
+<SketchAppShell sidebar={<Sidebar />}>
+  <div style={{ padding: 24 }}>
+    <h1 style={{ marginTop: 0 }}>Main content</h1>
+    <p>The app shell arranges an optional sidebar and top bar around the page.</p>
+  </div>
+</SketchAppShell>`}
+>
+  <div style={{ width: 480, maxWidth: "100%" }}>
+    <SketchAppShell
+      sidebar={
+        <SketchCard style={{ width: 160, height: "100%", padding: 16 }}>
+          <div style={{ fontWeight: 700, marginBottom: 12 }}>Menu</div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            <span>Dashboard</span>
+            <span>Projects</span>
+          </div>
+        </SketchCard>
+      }
+    >
+      <div style={{ padding: 24 }}>
+        <h1 style={{ marginTop: 0, fontSize: 18 }}>Main content</h1>
+        <p style={{ margin: 0 }}>Sidebar + content side-by-side.</p>
+      </div>
+    </SketchAppShell>
+  </div>
+</ComponentPreview>
+
+## With top bar
+
+<ComponentPreview
+  code={`import { SketchAppShell, SketchCard } from "blackchalk";
+
+const TopBar = () => (
+  <SketchCard style={{ padding: "12px 24px", marginBottom: 8 }}>
+    <strong>Acme Studio</strong>
+  </SketchCard>
+);
+
+const Sidebar = () => (
+  <SketchCard style={{ width: 200, height: "100%", padding: 16 }}>
+    <div style={{ fontWeight: 700, marginBottom: 12 }}>Menu</div>
+    <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+      <span>Dashboard</span>
+      <span>Projects</span>
+      <span>Settings</span>
+    </div>
+  </SketchCard>
+);
+
+<SketchAppShell topBar={<TopBar />} sidebar={<Sidebar />}>
+  <div style={{ padding: 24 }}>
+    <h1 style={{ marginTop: 0 }}>Main content</h1>
+    <p>With both a top bar and a sidebar.</p>
+  </div>
+</SketchAppShell>`}
+>
+  <div style={{ width: 480, maxWidth: "100%" }}>
+    <SketchAppShell
+      topBar={
+        <SketchCard style={{ padding: "10px 16px", marginBottom: 8 }}>
+          <strong>Acme Studio</strong>
+        </SketchCard>
+      }
+      sidebar={
+        <SketchCard style={{ width: 160, height: "100%", padding: 16 }}>
+          <div style={{ fontWeight: 700, marginBottom: 12 }}>Menu</div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            <span>Dashboard</span>
+            <span>Settings</span>
+          </div>
+        </SketchCard>
+      }
+    >
+      <div style={{ padding: 24 }}>
+        <h1 style={{ marginTop: 0, fontSize: 18 }}>Main content</h1>
+        <p style={{ margin: 0 }}>Top bar + sidebar + content.</p>
+      </div>
+    </SketchAppShell>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type        | Default |
+| ---------- | ----------- | ------- |
+| `children` | `ReactNode` | —       |
+| `sidebar`  | `ReactNode` | —       |
+| `topBar`   | `ReactNode` | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/patterns-sketchappshell--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/patterns/SketchAppShell.tsx).

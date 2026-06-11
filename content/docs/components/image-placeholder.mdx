@@ -1,0 +1,41 @@
+---
+title: Image Placeholder
+description: SketchImagePlaceholder — a hand-drawn image placeholder with a sketchy frame and icon.
+---
+
+`SketchImagePlaceholder` draws a rough.js framed rectangle with a sketchy mountain-and-sun icon
+inside — a low-fidelity stand-in for images that haven't loaded or been set yet. Pass a fixed
+`width` for thumbnails, or omit it to fill the parent container.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchImagePlaceholder } from "blackchalk";
+
+<SketchImagePlaceholder width={240} height={150} />`}
+>
+  <SketchImagePlaceholder width={240} height={150} />
+</ComponentPreview>
+
+## With label
+
+<ComponentPreview
+  code={`import { SketchImagePlaceholder } from "blackchalk";
+
+<SketchImagePlaceholder width={240} height={180} label="No image yet" />`}
+>
+  <SketchImagePlaceholder width={240} height={180} label="No image yet" />
+</ComponentPreview>
+
+## Props
+
+| Prop        | Type                  | Default |
+| ----------- | --------------------- | ------- |
+| `width`     | `number \| string`    | `"100%"` |
+| `height`    | `number`              | `150`   |
+| `label`     | `string`              | —       |
+| `className` | `string`              | —       |
+| `style`     | `CSSProperties`       | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/feedback-sketchimageplaceholder--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/feedback/SketchImagePlaceholder.tsx).

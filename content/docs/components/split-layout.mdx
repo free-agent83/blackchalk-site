@@ -1,0 +1,80 @@
+---
+title: Split Layout
+description: SketchSplitLayout — a two-pane split layout that stacks responsively on narrow screens.
+---
+
+`SketchSplitLayout` places two content panes side-by-side using a flex grid that
+respects a configurable `ratio`. On narrow screens the panes wrap and stack
+automatically — no media queries needed.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchSplitLayout, SketchCard, SketchInput } from "blackchalk";
+
+<SketchSplitLayout
+  left={
+    <SketchCard style={{ padding: 24 }}>
+      <h3 style={{ marginTop: 0 }}>Edit</h3>
+      <SketchInput placeholder="Title" />
+    </SketchCard>
+  }
+  right={
+    <SketchCard style={{ padding: 24 }}>
+      <h3 style={{ marginTop: 0 }}>Preview</h3>
+      <p>Live preview of the form on the left.</p>
+    </SketchCard>
+  }
+/>`}
+>
+  <div style={{ width: 480, maxWidth: "100%" }}>
+    <SketchSplitLayout
+      left={
+        <SketchCard style={{ padding: 24 }}>
+          <h3 style={{ marginTop: 0 }}>Edit</h3>
+          <SketchInput placeholder="Title" />
+        </SketchCard>
+      }
+      right={
+        <SketchCard style={{ padding: 24 }}>
+          <h3 style={{ marginTop: 0 }}>Preview</h3>
+          <p>Live preview of the form on the left.</p>
+        </SketchCard>
+      }
+    />
+  </div>
+</ComponentPreview>
+
+## Weighted ratio
+
+Pass a `ratio` tuple to give one pane more space than the other.
+
+<ComponentPreview
+  code={`import { SketchSplitLayout, SketchCard } from "blackchalk";
+
+<SketchSplitLayout
+  ratio={[2, 1]}
+  left={<SketchCard style={{ padding: 24 }}>Wide content (2fr)</SketchCard>}
+  right={<SketchCard style={{ padding: 24 }}>Sidebar (1fr)</SketchCard>}
+/>`}
+>
+  <div style={{ width: 480, maxWidth: "100%" }}>
+    <SketchSplitLayout
+      ratio={[2, 1]}
+      left={<SketchCard style={{ padding: 24 }}>Wide content (2fr)</SketchCard>}
+      right={<SketchCard style={{ padding: 24 }}>Sidebar (1fr)</SketchCard>}
+    />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop    | Type              | Default  |
+| ------- | ----------------- | -------- |
+| `left`  | `ReactNode`       | —        |
+| `right` | `ReactNode`       | —        |
+| `ratio` | `[number, number]` | `[1, 1]` |
+| `gap`   | `number`          | `32`     |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/patterns-sketchsplitlayout--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/patterns/SketchSplitLayout.tsx).

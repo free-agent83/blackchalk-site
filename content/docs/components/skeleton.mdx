@@ -1,0 +1,43 @@
+---
+title: Skeleton
+description: SketchSkeleton — a hand-drawn loading placeholder that pulses while content loads.
+---
+
+`SketchSkeleton` renders one or more rough.js filled blocks that pulse with a
+subtle opacity animation — a low-fidelity stand-in for text lines, images, or
+any content region that is still loading.
+
+## Line
+
+<ComponentPreview
+  code={`import { SketchSkeleton } from "blackchalk";
+
+<SketchSkeleton width={240} />`}
+>
+  <SketchSkeleton width={240} />
+</ComponentPreview>
+
+## Paragraph
+
+Pass `lines` to stack multiple text-bar rows; the last row renders at 70% width
+to mimic a natural paragraph end.
+
+<ComponentPreview
+  code={`import { SketchSkeleton } from "blackchalk";
+
+<SketchSkeleton lines={4} width={320} />`}
+>
+  <SketchSkeleton lines={4} width={320} />
+</ComponentPreview>
+
+## Props
+
+| Prop     | Type                 | Default |
+| -------- | -------------------- | ------- |
+| `width`  | `number \| string`   | `"100%"` |
+| `height` | `number \| string`   | `16`    |
+| `lines`  | `number`             | —       |
+| `style`  | `CSSProperties`      | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/feedback-sketchskeleton--line),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/feedback/SketchSkeleton.tsx).

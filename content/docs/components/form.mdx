@@ -1,0 +1,46 @@
+---
+title: Form
+description: SketchForm — a hand-drawn form container that wraps inputs in a sketch card.
+---
+
+`SketchForm` wraps its children in a `SketchCard` with a vertical flex layout and
+calls `onSubmit` (with `preventDefault` already handled) when the form is submitted.
+Pair it with `SketchFormField` to label inputs and `SketchButton` to submit.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchForm, SketchFormField, SketchInput, SketchButton } from "blackchalk";
+
+<SketchForm onSubmit={() => alert("Submitted")}>
+  <SketchFormField label="Name">
+    <SketchInput placeholder="Ada Lovelace" />
+  </SketchFormField>
+  <SketchFormField label="Email">
+    <SketchInput placeholder="ada@example.com" />
+  </SketchFormField>
+  <SketchButton variant="primary">Save</SketchButton>
+</SketchForm>`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchForm>
+      <SketchFormField label="Name">
+        <SketchInput placeholder="Ada Lovelace" />
+      </SketchFormField>
+      <SketchFormField label="Email">
+        <SketchInput placeholder="ada@example.com" />
+      </SketchFormField>
+      <SketchButton variant="primary">Save</SketchButton>
+    </SketchForm>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type                                        | Default |
+| ---------- | ------------------------------------------- | ------- |
+| `children` | `ReactNode`                                 | —       |
+| `onSubmit` | `(e: FormEvent<HTMLFormElement>) => void`   | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchform--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchForm.tsx).

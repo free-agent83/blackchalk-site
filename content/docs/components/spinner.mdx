@@ -1,0 +1,42 @@
+---
+title: Spinner
+description: SketchSpinner — a hand-drawn loading spinner.
+---
+
+`SketchSpinner` draws a rough.js spinner that rotates while `spinning` is true — a
+low-fidelity "working on it" cue that matches the rest of the sketch.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchSpinner } from "blackchalk";
+
+<SketchSpinner />`}
+>
+  <SketchSpinner />
+</ComponentPreview>
+
+## Sizes
+
+<ComponentPreview
+  code={`<SketchSpinner size={24} />
+<SketchSpinner size={40} />
+<SketchSpinner size={64} />`}
+>
+  <SketchSpinner size={24} />
+  <SketchSpinner size={40} />
+  <SketchSpinner size={64} />
+</ComponentPreview>
+
+## Props
+
+| Prop        | Type            | Default |
+| ----------- | --------------- | ------- |
+| `spinning`  | `boolean`       | `true`  |
+| `size`      | `number`        | —       |
+| `duration`  | `number`        | —       |
+| `className` | `string`        | —       |
+| `style`     | `CSSProperties` | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/primitives-sketchspinner--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/primitives/SketchSpinner.tsx).

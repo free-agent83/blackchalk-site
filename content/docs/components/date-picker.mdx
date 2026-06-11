@@ -1,0 +1,33 @@
+---
+title: Date Picker
+description: SketchDatePicker — a hand-drawn calendar month picker with sketchy day selection.
+---
+
+`SketchDatePicker` renders a self-contained calendar grid with prev/next month navigation.
+The selected day gets a rough.js fill and bold ink. It works controlled (pass `value` +
+`onChange`) or uncontrolled, and fits naturally inside a `SketchDrawer` or popover.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchDatePicker } from "blackchalk";
+import { useState } from "react";
+
+export function Demo() {
+  const [date, setDate] = useState<Date | undefined>(undefined);
+  return <SketchDatePicker value={date} onChange={setDate} />;
+}`}
+>
+  <SketchDatePicker />
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type                    | Default |
+| ---------- | ----------------------- | ------- |
+| `value`    | `Date`                  | —       |
+| `onChange` | `(date: Date) => void`  | —       |
+| `style`    | `CSSProperties`         | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchdatepicker--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchDatePicker.tsx).

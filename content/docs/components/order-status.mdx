@@ -1,0 +1,49 @@
+---
+title: Order Status
+description: SketchOrderStatus — a hand-drawn horizontal stepper for tracking order progress.
+---
+
+`SketchOrderStatus` renders a rough.js horizontal stepper with dot nodes, mapping
+order fulfilment steps to a current position. It's fluid — it fills the width of its
+container, so wrap it to size it.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchOrderStatus } from "blackchalk";
+
+<SketchOrderStatus currentStep={1} />`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchOrderStatus currentStep={1} />
+  </div>
+</ComponentPreview>
+
+## Custom steps
+
+<ComponentPreview
+  code={`import { SketchOrderStatus } from "blackchalk";
+
+<SketchOrderStatus
+  steps={["Placed", "Confirmed", "Shipped", "Delivered"]}
+  currentStep={3}
+/>`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchOrderStatus
+      steps={["Placed", "Confirmed", "Shipped", "Delivered"]}
+      currentStep={3}
+    />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop          | Type              | Default                                       |
+| ------------- | ----------------- | --------------------------------------------- |
+| `steps`       | `string[]`        | `["Placed", "Confirmed", "Shipped", "Delivered"]` |
+| `currentStep` | `number`          | `0`                                           |
+| `style`       | `CSSProperties`   | —                                             |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/ecommerce-sketchorderstatus--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/ecommerce/SketchOrderStatus.tsx).

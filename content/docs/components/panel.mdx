@@ -1,0 +1,51 @@
+---
+title: Panel
+description: SketchPanel — a titled card for grouping related content.
+---
+
+`SketchPanel` wraps content in a rough.js bordered card with an optional heading —
+a low-fidelity container for grouping related items on a page.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchPanel } from "blackchalk";
+
+<SketchPanel title="Account details">
+  <p style={{ margin: 0 }}>
+    A panel is a titled card for grouping related content on a page.
+  </p>
+</SketchPanel>`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchPanel title="Account details">
+      <p style={{ margin: 0 }}>
+        A panel is a titled card for grouping related content on a page.
+      </p>
+    </SketchPanel>
+  </div>
+</ComponentPreview>
+
+## Without title
+
+<ComponentPreview
+  code={`<SketchPanel>
+  <p style={{ margin: 0 }}>A panel without a title — just padded content.</p>
+</SketchPanel>`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchPanel>
+      <p style={{ margin: 0 }}>A panel without a title — just padded content.</p>
+    </SketchPanel>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type        | Default |
+| ---------- | ----------- | ------- |
+| `title`    | `string`    | —       |
+| `children` | `ReactNode` | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/layout-sketchpanel--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/layout/SketchPanel.tsx).

@@ -1,0 +1,46 @@
+---
+title: Breadcrumb
+description: SketchBreadcrumb — a hand-drawn breadcrumb trail with rough.js underlines on clickable crumbs.
+---
+
+`SketchBreadcrumb` renders a horizontal nav trail from an array of items. Clickable
+crumbs get a rough.js underline; the final (current) crumb is bold and has no
+underline regardless of whether an `onClick` is supplied.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchBreadcrumb } from "blackchalk";
+
+<SketchBreadcrumb
+  items={[
+    { label: "Home", onClick: () => {} },
+    { label: "Projects", onClick: () => {} },
+    { label: "Blackchalk" },
+  ]}
+/>`}
+>
+  <SketchBreadcrumb
+    items={[
+      { label: "Home" },
+      { label: "Projects" },
+      { label: "Blackchalk" },
+    ]}
+  />
+</ComponentPreview>
+
+## Props
+
+| Prop    | Type                          | Default |
+| ------- | ----------------------------- | ------- |
+| `items` | `SketchBreadcrumbItem[]`      | —       |
+
+### SketchBreadcrumbItem
+
+| Field     | Type         | Default |
+| --------- | ------------ | ------- |
+| `label`   | `string`     | —       |
+| `onClick` | `() => void` | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchbreadcrumb--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchBreadcrumb.tsx).

@@ -1,0 +1,49 @@
+---
+title: Drawer
+description: SketchDrawer — a slide-in side or bottom sheet for filters, detail panes, and mobile navigation.
+---
+
+`SketchDrawer` portals a rough.js panel over a dimmed backdrop. It slides in from
+the right, left, or bottom edge; closes on backdrop click or Escape; and animates
+with the shared sketch spring.
+
+## Default
+
+<ComponentPreview
+  code={`import { useState } from "react";
+import { SketchDrawer, SketchButton } from "blackchalk";
+
+const Demo = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <SketchButton onClick={() => setOpen(true)}>Open drawer</SketchButton>
+      <SketchDrawer
+        open={open}
+        onClose={() => setOpen(false)}
+        title="Filters"
+      >
+        <p style={{ marginTop: 0 }}>
+          Drawer content goes here — filters, details, or mobile navigation.
+        </p>
+      </SketchDrawer>
+    </>
+  );
+};`}
+>
+  <DrawerDemo />
+</ComponentPreview>
+
+## Props
+
+| Prop        | Type                          | Default   |
+| ----------- | ----------------------------- | --------- |
+| `open`      | `boolean`                     | —         |
+| `onClose`   | `() => void`                  | —         |
+| `side`      | `"left" \| "right" \| "bottom"` | `"right"` |
+| `size`      | `number`                      | `360`     |
+| `title`     | `string`                      | —         |
+| `children`  | `ReactNode`                   | —         |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchdrawer--right),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchDrawer.tsx).

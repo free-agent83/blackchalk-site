@@ -1,0 +1,45 @@
+---
+title: Bar Chart
+description: SketchBarChart — a hand-drawn bar chart with axes.
+---
+
+`SketchBarChart` plots labelled values as rough.js bars with sketched axes. It's
+fluid — it fills the width of its container, so wrap it to size it.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchBarChart } from "blackchalk";
+
+<SketchBarChart
+  data={[
+    { label: "Q1", value: 32 },
+    { label: "Q2", value: 48 },
+    { label: "Q3", value: 41 },
+    { label: "Q4", value: 60 },
+  ]}
+  height={180}
+/>`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchBarChart
+      data={[
+        { label: "Q1", value: 32 },
+        { label: "Q2", value: 48 },
+        { label: "Q3", value: 41 },
+        { label: "Q4", value: 60 },
+      ]}
+      height={180}
+    />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop     | Type                            | Default |
+| -------- | ------------------------------- | ------- |
+| `data`   | `{ label: string, value: number }[]` | —  |
+| `height` | `number`                        | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/charts-sketchbarchart--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/charts/SketchBarChart.tsx).

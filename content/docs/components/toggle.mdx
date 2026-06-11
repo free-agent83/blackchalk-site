@@ -1,0 +1,48 @@
+---
+title: Toggle
+description: SketchToggle — a hand-drawn on/off switch with animated knob.
+---
+
+`SketchToggle` renders a rough.js pill track with a spring-animated knob. It
+works uncontrolled (flips its own state) or fully controlled when you pass
+`onChange`.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchToggle } from "blackchalk";
+
+<SketchToggle checked={false} aria-label="Toggle" />`}
+>
+  <SketchToggle checked={false} aria-label="Toggle" />
+</ComponentPreview>
+
+## With label
+
+<ComponentPreview
+  code={`import { SketchToggle } from "blackchalk";
+import { useState } from "react";
+
+export function Demo() {
+  const [on, setOn] = useState(false);
+  return <SketchToggle checked={on} onChange={setOn} label="Dark mode" />;
+}`}
+>
+  <SketchToggle checked={false} label="Dark mode" />
+</ComponentPreview>
+
+## Props
+
+| Prop         | Type                       | Default |
+| ------------ | -------------------------- | ------- |
+| `checked`    | `boolean`                  | `false` |
+| `onChange`   | `(checked: boolean) => void` | —     |
+| `label`      | `ReactNode`                | —       |
+| `disabled`   | `boolean`                  | —       |
+| `id`         | `string`                   | —       |
+| `aria-label` | `string`                   | —       |
+| `className`  | `string`                   | —       |
+| `style`      | `CSSProperties`            | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/primitives-sketchtoggle--off),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/primitives/SketchToggle.tsx).

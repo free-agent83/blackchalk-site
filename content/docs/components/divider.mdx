@@ -1,0 +1,38 @@
+---
+title: Divider
+description: SketchDivider — a hand-drawn horizontal rule.
+---
+
+`SketchDivider` draws a rough.js horizontal line that fills the width of its
+container — a low-fidelity separator that matches the rest of the sketch.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchDivider } from "blackchalk";
+
+<div style={{ maxWidth: 400 }}>
+  <p style={{ margin: "0 0 8px" }}>Above</p>
+  <SketchDivider />
+  <p style={{ margin: "8px 0 0" }}>Below</p>
+</div>`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <p style={{ margin: "0 0 8px" }}>Above</p>
+    <SketchDivider />
+    <p style={{ margin: "8px 0 0" }}>Below</p>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop        | Type            | Default |
+| ----------- | --------------- | ------- |
+| `className` | `string`        | —       |
+| `style`     | `CSSProperties` | —       |
+| `elevation` | `number`        | —       |
+
+`elevation` is accepted for API compatibility but has no visual effect.
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/primitives-dividers-de-wire-target--horizontal),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/primitives/SketchDivider.tsx).

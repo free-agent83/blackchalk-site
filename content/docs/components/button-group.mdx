@@ -1,0 +1,55 @@
+---
+title: Button Group
+description: SketchButtonGroup — a flex row that spaces and aligns sketch buttons.
+---
+
+`SketchButtonGroup` arranges its children in a wrapping flex row with consistent
+gap and an optional width cap — useful for action rows like Cancel / Save pairs.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchButton, SketchButtonGroup } from "blackchalk";
+
+<SketchButtonGroup>
+  <SketchButton>Cancel</SketchButton>
+  <SketchButton variant="primary">Save</SketchButton>
+</SketchButtonGroup>`}
+>
+  <div style={{ width: 360, maxWidth: "100%" }}>
+    <SketchButtonGroup>
+      <SketchButton>Cancel</SketchButton>
+      <SketchButton variant="primary">Save</SketchButton>
+    </SketchButtonGroup>
+  </div>
+</ComponentPreview>
+
+## Capped width
+
+Pass `maxWidth` to constrain the group to a fixed pixel width.
+
+<ComponentPreview
+  code={`<SketchButtonGroup maxWidth={240} gap={4}>
+  <SketchButton>One</SketchButton>
+  <SketchButton>Two</SketchButton>
+  <SketchButton>Three</SketchButton>
+</SketchButtonGroup>`}
+>
+  <SketchButtonGroup maxWidth={240} gap={4}>
+    <SketchButton>One</SketchButton>
+    <SketchButton>Two</SketchButton>
+    <SketchButton>Three</SketchButton>
+  </SketchButtonGroup>
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type                | Default  |
+| ---------- | ------------------- | -------- |
+| `children` | `ReactNode`         | —        |
+| `maxWidth` | `number \| string`  | `"100%"` |
+| `gap`      | `number`            | `8`      |
+| `style`    | `CSSProperties`     | —        |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchbuttongroup--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchButtonGroup.tsx).

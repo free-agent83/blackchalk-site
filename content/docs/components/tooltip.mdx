@@ -1,0 +1,33 @@
+---
+title: Tooltip
+description: SketchTooltip — a hand-drawn tooltip that appears above its trigger on hover.
+---
+
+`SketchTooltip` wraps any element and shows a rough.js filled callout above it on
+hover. Pass the label text via `content` and the trigger as `children`.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchTooltip, SketchButton } from "blackchalk";
+
+<SketchTooltip content="This saves your changes">
+  <SketchButton>Hover me</SketchButton>
+</SketchTooltip>`}
+>
+  <div style={{ padding: 48 }}>
+    <SketchTooltip content="This saves your changes">
+      <SketchButton>Hover me</SketchButton>
+    </SketchTooltip>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop      | Type        | Default |
+| --------- | ----------- | ------- |
+| `content` | `string`    | —       |
+| `children` | `ReactNode` | —      |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchtooltip--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchTooltip.tsx).

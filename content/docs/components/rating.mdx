@@ -1,0 +1,40 @@
+---
+title: Rating
+description: SketchRating — a hand-drawn five-star rating widget.
+---
+
+`SketchRating` draws five rough.js stars filled to reflect a numeric rating. It
+works as a read-only display or an interactive picker — clicking a star updates
+the value and fires `onChange`.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchRating } from "blackchalk";
+
+<SketchRating rating={4} />`}
+>
+  <SketchRating rating={4} />
+</ComponentPreview>
+
+## Interactive
+
+<ComponentPreview
+  code={`import { SketchRating } from "blackchalk";
+
+<SketchRating rating={3.5} size={32} onChange={(r) => console.log(r)} />`}
+>
+  <SketchRating rating={3.5} size={32} />
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type                      | Default |
+| ---------- | ------------------------- | ------- |
+| `rating`   | `number`                  | `0`     |
+| `size`     | `number`                  | `20`    |
+| `onChange` | `(rating: number) => void` | —      |
+| `readOnly` | `boolean`                 | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/ecommerce-sketchrating--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/ecommerce/SketchRating.tsx).

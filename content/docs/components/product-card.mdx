@@ -1,0 +1,61 @@
+---
+title: Product Card
+description: SketchProductCard — a hand-drawn e-commerce product card with image placeholder, title, price, and action button.
+---
+
+`SketchProductCard` composes a rough.js card with a sketched image placeholder,
+product title, price tag, and a primary action button. Pass `originalPrice` to
+show a sale line-through.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchProductCard } from "blackchalk";
+
+<SketchProductCard
+  title="Hand-Knit Wool Beanie"
+  price="24.00"
+/>`}
+>
+  <div style={{ width: 260, maxWidth: "100%" }}>
+    <SketchProductCard
+      title="Hand-Knit Wool Beanie"
+      price="24.00"
+    />
+  </div>
+</ComponentPreview>
+
+## On Sale
+
+<ComponentPreview
+  code={`import { SketchProductCard } from "blackchalk";
+
+<SketchProductCard
+  title="Vintage Leather Satchel"
+  price="89.00"
+  originalPrice="129.00"
+/>`}
+>
+  <div style={{ width: 260, maxWidth: "100%" }}>
+    <SketchProductCard
+      title="Vintage Leather Satchel"
+      price="89.00"
+      originalPrice="129.00"
+    />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop            | Type       | Default         |
+| --------------- | ---------- | --------------- |
+| `title`         | `string`   | —               |
+| `price`         | `string`   | —               |
+| `originalPrice` | `string`   | —               |
+| `actionLabel`   | `string`   | `"Add to Cart"` |
+| `onAction`      | `() => void` | —             |
+| `imageWidth`    | `number`   | —               |
+| `imageHeight`   | `number`   | `150`           |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/ecommerce-sketchproductcard--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/ecommerce/SketchProductCard.tsx).

@@ -1,0 +1,55 @@
+---
+title: Tab Bar
+description: SketchTabBar — a hand-drawn mobile bottom-tab navigation bar.
+---
+
+`SketchTabBar` renders evenly spaced icon + label tabs with a sketched top divider.
+It manages its own active state when used without `onChange`, so it responds to
+clicks in a static sketch, and becomes fully controlled when you supply `onChange`.
+
+## Default
+
+<ComponentPreview
+  code={`import { useState } from "react";
+import { SketchTabBar } from "blackchalk";
+
+const items = [
+  { icon: "home",   label: "Home"    },
+  { icon: "search", label: "Search"  },
+  { icon: "bell",   label: "Alerts"  },
+  { icon: "user",   label: "Profile" },
+];
+
+export function Demo() {
+  const [active, setActive] = useState(0);
+  return (
+    <div style={{ width: 360, margin: "0 auto" }}>
+      <SketchTabBar items={items} activeIndex={active} onChange={setActive} />
+    </div>
+  );
+}`}
+>
+  <div style={{ width: 360, maxWidth: "100%" }}>
+    <SketchTabBar
+      items={[
+        { icon: "home",   label: "Home"    },
+        { icon: "search", label: "Search"  },
+        { icon: "bell",   label: "Alerts"  },
+        { icon: "user",   label: "Profile" },
+      ]}
+      activeIndex={0}
+    />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop          | Type                                   | Default |
+| ------------- | -------------------------------------- | ------- |
+| `items`       | `{ icon: IconName, label: string }[]`  | —       |
+| `activeIndex` | `number`                               | `0`     |
+| `onChange`    | `(index: number) => void`              | —       |
+| `style`       | `CSSProperties`                        | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchtabbar--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchTabBar.tsx).

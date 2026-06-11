@@ -1,0 +1,39 @@
+---
+title: Shape
+description: SketchShape — a hand-drawn geometric shape rendered with rough.js.
+---
+
+`SketchShape` renders a rough.js circle, triangle, or rectangle at a given size.
+All drawing options (fill, stroke, roughness) are configurable via props.
+
+## Shapes
+
+<ComponentPreview
+  code={`import { SketchShape } from "blackchalk";
+
+<div style={{ display: "flex", gap: 24, alignItems: "flex-end" }}>
+  <SketchShape shape="circle" size={48} />
+  <SketchShape shape="triangle" size={48} />
+  <SketchShape shape="rectangle" size={48} />
+</div>`}
+>
+  <div style={{ display: "flex", gap: 24, alignItems: "flex-end" }}>
+    <SketchShape shape="circle" size={48} />
+    <SketchShape shape="triangle" size={48} />
+    <SketchShape shape="rectangle" size={48} />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop          | Type                                          | Default          |
+| ------------- | --------------------------------------------- | ---------------- |
+| `shape`       | `"circle" \| "triangle" \| "rectangle"`       | —                |
+| `size`        | `number`                                      | `36`             |
+| `fill`        | `string`                                      | `fills.light`    |
+| `roughness`   | `number`                                      | `1.5`            |
+| `stroke`      | `string`                                      | `colors.fg`      |
+| `strokeWidth` | `number`                                      | `strokes.surface`|
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/primitives-sketchshape--circle),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/primitives/SketchShape.tsx).

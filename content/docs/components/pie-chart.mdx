@@ -1,0 +1,71 @@
+---
+title: Pie Chart
+description: SketchPieChart — a hand-drawn pie (or donut) chart with slice labels.
+---
+
+`SketchPieChart` plots proportional data as rough.js arc slices with outer labels.
+It's fluid — it fills the width of its container up to `maxWidth`, so wrap it to
+size it. Pass `donut` to cut a hole in the centre.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchPieChart } from "blackchalk";
+
+<SketchPieChart
+  data={[
+    { label: "Direct", value: 40 },
+    { label: "Search", value: 30 },
+    { label: "Social", value: 20 },
+    { label: "Email",  value: 10 },
+  ]}
+/>`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchPieChart
+      data={[
+        { label: "Direct", value: 40 },
+        { label: "Search", value: 30 },
+        { label: "Social", value: 20 },
+        { label: "Email",  value: 10 },
+      ]}
+    />
+  </div>
+</ComponentPreview>
+
+## Donut
+
+<ComponentPreview
+  code={`<SketchPieChart
+  data={[
+    { label: "Direct", value: 40 },
+    { label: "Search", value: 30 },
+    { label: "Social", value: 20 },
+    { label: "Email",  value: 10 },
+  ]}
+  donut
+/>`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchPieChart
+      data={[
+        { label: "Direct", value: 40 },
+        { label: "Search", value: 30 },
+        { label: "Social", value: 20 },
+        { label: "Email",  value: 10 },
+      ]}
+      donut
+    />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type                                    | Default |
+| ---------- | --------------------------------------- | ------- |
+| `data`     | `{ label: string; value: number }[]`    | —       |
+| `maxWidth` | `number`                                | `400`   |
+| `donut`    | `boolean`                               | `false` |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/charts-sketchpiechart--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/charts/SketchPieChart.tsx).

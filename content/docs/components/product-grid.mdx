@@ -1,0 +1,61 @@
+---
+title: Product Grid
+description: SketchProductGrid — a responsive CSS grid wrapper for hand-drawn product cards.
+---
+
+`SketchProductGrid` arranges `SketchProductCard` children into a responsive CSS grid
+that reflows automatically from the target column count down to a single column on
+narrow screens. It fills the width of its container, so wrap it to constrain it.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchProductGrid, SketchProductCard } from "blackchalk";
+
+<SketchProductGrid>
+  <SketchProductCard title="Hand-Knit Wool Beanie" price="24.00" />
+  <SketchProductCard title="Vintage Leather Satchel" price="89.00" originalPrice="129.00" />
+  <SketchProductCard title="Ceramic Pour-Over Set" price="42.50" />
+</SketchProductGrid>`}
+>
+  <div style={{ width: 480, maxWidth: "100%" }}>
+    <SketchProductGrid>
+      <SketchProductCard title="Hand-Knit Wool Beanie" price="24.00" />
+      <SketchProductCard title="Vintage Leather Satchel" price="89.00" originalPrice="129.00" />
+      <SketchProductCard title="Ceramic Pour-Over Set" price="42.50" />
+    </SketchProductGrid>
+  </div>
+</ComponentPreview>
+
+## Two columns
+
+<ComponentPreview
+  code={`import { SketchProductGrid, SketchProductCard } from "blackchalk";
+
+<SketchProductGrid columns={2}>
+  <SketchProductCard title="Linen Tote Bag" price="18.00" />
+  <SketchProductCard title="Brass Desk Lamp" price="76.00" />
+  <SketchProductCard title="Recycled Notebook" price="9.00" />
+  <SketchProductCard title="Ceramic Pour-Over Set" price="42.50" />
+</SketchProductGrid>`}
+>
+  <div style={{ width: 480, maxWidth: "100%" }}>
+    <SketchProductGrid columns={2}>
+      <SketchProductCard title="Linen Tote Bag" price="18.00" />
+      <SketchProductCard title="Brass Desk Lamp" price="76.00" />
+      <SketchProductCard title="Recycled Notebook" price="9.00" />
+      <SketchProductCard title="Ceramic Pour-Over Set" price="42.50" />
+    </SketchProductGrid>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop          | Type        | Default |
+| ------------- | ----------- | ------- |
+| `children`    | `ReactNode` | —       |
+| `columns`     | `number`    | `3`     |
+| `minColWidth` | `number`    | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/ecommerce-sketchproductgrid--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/ecommerce/SketchProductGrid.tsx).

@@ -1,0 +1,51 @@
+---
+title: Page Header
+description: SketchPageHeader — a hand-drawn page title block with optional description and actions.
+---
+
+`SketchPageHeader` renders a page-level heading, an optional description, and an
+optional actions slot, separated from the page body by a sketched divider.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchPageHeader } from "blackchalk";
+
+<SketchPageHeader title="Projects" />`}
+>
+  <div style={{ width: 480, maxWidth: "100%" }}>
+    <SketchPageHeader title="Projects" />
+  </div>
+</ComponentPreview>
+
+## With description and actions
+
+<ComponentPreview
+  code={`import { SketchPageHeader } from "blackchalk";
+import { SketchButton } from "blackchalk";
+
+<SketchPageHeader
+  title="Team members"
+  description="Manage who has access to this workspace."
+  actions={<SketchButton>Invite</SketchButton>}
+/>`}
+>
+  <div style={{ width: 480, maxWidth: "100%" }}>
+    <SketchPageHeader
+      title="Team members"
+      description="Manage who has access to this workspace."
+      actions={<SketchButton>Invite</SketchButton>}
+    />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop          | Type        | Default |
+| ------------- | ----------- | ------- |
+| `title`       | `string`    | —       |
+| `description` | `string`    | —       |
+| `actions`     | `ReactNode` | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/patterns-sketchpageheader--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/patterns/SketchPageHeader.tsx).

@@ -1,0 +1,32 @@
+---
+title: Search Bar
+description: SketchSearchBar — a hand-drawn search input for ecommerce and filter interfaces.
+---
+
+`SketchSearchBar` renders a rough.js-styled search input that fills the width of
+its container — wrap it to control its size.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchSearchBar } from "blackchalk";
+
+<div style={{ width: 360, maxWidth: "100%" }}>
+  <SketchSearchBar placeholder="Search products..." />
+</div>`}
+>
+  <div style={{ width: 360, maxWidth: "100%" }}>
+    <SketchSearchBar placeholder="Search products..." />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop          | Type                      | Default      |
+| ------------- | ------------------------- | ------------ |
+| `value`       | `string`                  | —            |
+| `placeholder` | `string`                  | `"Search..."` |
+| `onChange`    | `(value: string) => void` | —            |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/ecommerce-sketchsearchbar--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/ecommerce/SketchSearchBar.tsx).

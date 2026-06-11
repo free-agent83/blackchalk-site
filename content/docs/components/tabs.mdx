@@ -1,0 +1,43 @@
+---
+title: Tabs
+description: SketchTabs — hand-drawn tabbed panels.
+---
+
+`SketchTabs` renders a row of sketched tabs with the active panel below. It manages
+its own selection when uncontrolled, or you can drive it with `activeIndex` +
+`onChange`.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchTabs } from "blackchalk";
+
+<SketchTabs
+  tabs={[
+    { label: "Overview", content: "The big picture." },
+    { label: "Specs", content: "The fine print." },
+    { label: "Reviews", content: "What people say." },
+  ]}
+/>`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchTabs
+      tabs={[
+        { label: "Overview", content: "The big picture." },
+        { label: "Specs", content: "The fine print." },
+        { label: "Reviews", content: "What people say." },
+      ]}
+    />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop          | Type                                  | Default |
+| ------------- | ------------------------------------- | ------- |
+| `tabs`        | `{ label: string, content: ReactNode }[]` | —   |
+| `activeIndex` | `number`                              | —       |
+| `onChange`    | `(index: number) => void`             | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchtabs--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchTabs.tsx).

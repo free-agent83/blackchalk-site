@@ -1,0 +1,66 @@
+---
+title: Alert
+description: SketchAlert — an inline status banner with a hand-drawn border and leading icon.
+---
+
+`SketchAlert` renders an inline status or info banner. It uses a rough.js border
+via `SketchCard`, a leading icon to convey severity, and a monochrome palette —
+variants are distinguished by icon, not colour.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchAlert } from "blackchalk";
+
+<SketchAlert title="Heads up" variant="info">
+  Your trial ends in 3 days.
+</SketchAlert>`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchAlert title="Heads up" variant="info">
+      Your trial ends in 3 days.
+    </SketchAlert>
+  </div>
+</ComponentPreview>
+
+## Variants
+
+<ComponentPreview
+  code={`<SketchAlert title="Saved" variant="success">
+  Your changes have been published.
+</SketchAlert>
+
+<SketchAlert title="Low on credits" variant="warning">
+  You have 2 generations left.
+</SketchAlert>
+
+<SketchAlert title="Something went wrong" variant="error" onClose={() => {}}>
+  We couldn't save your changes. Try again.
+</SketchAlert>`}
+>
+  <div style={{ width: 420, maxWidth: "100%", display: "flex", flexDirection: "column", gap: 12 }}>
+    <SketchAlert title="Saved" variant="success">
+      Your changes have been published.
+    </SketchAlert>
+    <SketchAlert title="Low on credits" variant="warning">
+      You have 2 generations left.
+    </SketchAlert>
+    <SketchAlert title="Something went wrong" variant="error">
+      We couldn't save your changes. Try again.
+    </SketchAlert>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop        | Type                                              | Default  |
+| ----------- | ------------------------------------------------- | -------- |
+| `variant`   | `"info" \| "success" \| "warning" \| "error"`    | `"info"` |
+| `title`     | `string`                                          | —        |
+| `children`  | `ReactNode`                                       | —        |
+| `icon`      | `IconName`                                        | —        |
+| `onClose`   | `() => void`                                      | —        |
+| `style`     | `CSSProperties`                                   | —        |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/feedback-sketchalert--info),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/feedback/SketchAlert.tsx).

@@ -1,0 +1,51 @@
+---
+title: Pagination
+description: SketchPagination — a hand-drawn page navigator with prev/next buttons and ellipsis collapse.
+---
+
+`SketchPagination` renders rough.js page buttons with prev/next arrows and automatic
+ellipsis collapsing for large page counts. It can run fully uncontrolled (internal
+state) or controlled — supply both `currentPage` and `onPageChange` together.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchPagination } from "blackchalk";
+import { useState } from "react";
+
+export default function Example() {
+  const [page, setPage] = useState(1);
+  return (
+    <SketchPagination currentPage={page} totalPages={5} onPageChange={setPage} />
+  );
+}`}
+>
+  <SketchPagination totalPages={5} />
+</ComponentPreview>
+
+## Many pages with ellipsis
+
+<ComponentPreview
+  code={`import { SketchPagination } from "blackchalk";
+import { useState } from "react";
+
+export default function Example() {
+  const [page, setPage] = useState(6);
+  return (
+    <SketchPagination currentPage={page} totalPages={20} onPageChange={setPage} />
+  );
+}`}
+>
+  <SketchPagination totalPages={20} />
+</ComponentPreview>
+
+## Props
+
+| Prop           | Type                      | Default |
+| -------------- | ------------------------- | ------- |
+| `totalPages`   | `number`                  | —       |
+| `currentPage`  | `number`                  | —       |
+| `onPageChange` | `(page: number) => void`  | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchpagination--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchPagination.tsx).

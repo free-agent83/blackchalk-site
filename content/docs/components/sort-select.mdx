@@ -1,0 +1,56 @@
+---
+title: Sort Select
+description: SketchSortSelect — a hand-drawn sort-order picker for product listings.
+---
+
+`SketchSortSelect` pairs a "Sort by:" label with a `SketchSelect` dropdown to let
+shoppers re-order a product grid. Pass an `options` array, a `selected` value, and
+an `onChange` handler to wire it up.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchSortSelect } from "blackchalk";
+import { useState } from "react";
+
+const options = [
+  { value: "featured",   label: "Featured" },
+  { value: "price-asc",  label: "Price: Low to High" },
+  { value: "price-desc", label: "Price: High to Low" },
+  { value: "newest",     label: "Newest" },
+  { value: "rating",     label: "Top Rated" },
+];
+
+export default function Example() {
+  const [selected, setSelected] = useState("featured");
+  return (
+    <SketchSortSelect
+      options={options}
+      selected={selected}
+      onChange={setSelected}
+    />
+  );
+}`}
+>
+  <SketchSortSelect
+    options={[
+      { value: "featured",   label: "Featured" },
+      { value: "price-asc",  label: "Price: Low to High" },
+      { value: "price-desc", label: "Price: High to Low" },
+      { value: "newest",     label: "Newest" },
+      { value: "rating",     label: "Top Rated" },
+    ]}
+    selected="featured"
+  />
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type                                    | Default |
+| ---------- | --------------------------------------- | ------- |
+| `options`  | `{ value: string, label: string }[]`    | —       |
+| `selected` | `string`                                | —       |
+| `onChange` | `(value: string) => void`               | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/ecommerce-sketchsortselect--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/ecommerce/SketchSortSelect.tsx).

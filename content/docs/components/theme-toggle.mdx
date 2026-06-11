@@ -1,0 +1,38 @@
+---
+title: Theme Toggle
+description: SketchThemeToggle — a hand-drawn toggle that switches the page between light and dark themes.
+---
+
+`SketchThemeToggle` wraps `SketchToggle` with built-in theme state: it reads
+`data-theme` from `<html>`, flips it on change, and persists the preference to
+`localStorage`. Drop it anywhere — no provider needed.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchThemeToggle } from "blackchalk";
+
+<SketchThemeToggle />`}
+>
+  <SketchThemeToggle />
+</ComponentPreview>
+
+## Custom label
+
+<ComponentPreview
+  code={`import { SketchThemeToggle } from "blackchalk";
+
+<SketchThemeToggle label="Night theme" />`}
+>
+  <SketchThemeToggle label="Night theme" />
+</ComponentPreview>
+
+## Props
+
+| Prop      | Type            | Default       |
+| --------- | --------------- | ------------- |
+| `label`   | `string`        | `"Dark mode"` |
+| `style`   | `CSSProperties` | —             |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchthemetoggle--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchThemeToggle.tsx).

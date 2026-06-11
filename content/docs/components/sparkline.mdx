@@ -1,0 +1,47 @@
+---
+title: Sparkline
+description: SketchSparkline — a hand-drawn inline trend line for a series of values.
+---
+
+`SketchSparkline` plots a sequence of numbers as a rough.js polyline. It's
+fluid — it fills the width of its container, so wrap it to size it.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchSparkline } from "blackchalk";
+
+<SketchSparkline data={[3, 7, 4, 9, 6, 11, 8, 14, 10]} />`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchSparkline data={[3, 7, 4, 9, 6, 11, 8, 14, 10]} />
+  </div>
+</ComponentPreview>
+
+## Taller
+
+<ComponentPreview
+  code={`import { SketchSparkline } from "blackchalk";
+
+<SketchSparkline
+  data={[12, 9, 14, 8, 16, 11, 18, 13, 20, 15]}
+  height={48}
+/>`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchSparkline
+      data={[12, 9, 14, 8, 16, 11, 18, 13, 20, 15]}
+      height={48}
+    />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop     | Type       | Default |
+| -------- | ---------- | ------- |
+| `data`   | `number[]` | —       |
+| `height` | `number`   | `30`    |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/charts-sketchsparkline--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/charts/SketchSparkline.tsx).

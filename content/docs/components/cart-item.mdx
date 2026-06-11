@@ -1,0 +1,44 @@
+---
+title: Cart Item
+description: SketchCartItem — a hand-drawn cart row with quantity controls and an optional remove button.
+---
+
+`SketchCartItem` renders a single line item for a shopping cart — a sketch image
+placeholder, product name, price, and ± quantity stepper. Pass `onRemove` to show a
+close button on the right edge.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchCartItem } from "blackchalk";
+
+<SketchCartItem
+  name="Hand-Knit Wool Beanie"
+  price="24.00"
+  quantity={2}
+/>`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchCartItem
+      name="Hand-Knit Wool Beanie"
+      price="24.00"
+      quantity={2}
+    />
+  </div>
+</ComponentPreview>
+
+Pass `onRemove` to surface a close button on the right edge, and `onQuantityChange`
+to handle the ± stepper.
+
+## Props
+
+| Prop               | Type                        | Default |
+| ------------------ | --------------------------- | ------- |
+| `name`             | `string`                    | —       |
+| `price`            | `string`                    | —       |
+| `quantity`         | `number`                    | —       |
+| `onQuantityChange` | `(qty: number) => void`     | —       |
+| `onRemove`         | `() => void`                | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/ecommerce-sketchcartitem--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/ecommerce/SketchCartItem.tsx).

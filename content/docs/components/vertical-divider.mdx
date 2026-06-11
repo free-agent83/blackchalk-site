@@ -1,0 +1,35 @@
+---
+title: Vertical Divider
+description: SketchVerticalDivider — a hand-drawn vertical rule for separating inline or flex items.
+---
+
+`SketchVerticalDivider` draws a rough.js vertical line that stretches to the height
+of its flex container — use it between items in a horizontal row to match the
+sketch aesthetic.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchVerticalDivider } from "blackchalk";
+
+<div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+  <span>Left</span>
+  <SketchVerticalDivider style={{ height: 24 }} />
+  <span>Right</span>
+</div>`}
+>
+  <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+    <span>Left</span>
+    <SketchVerticalDivider style={{ height: 24 }} />
+    <span>Right</span>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop    | Type            | Default |
+| ------- | --------------- | ------- |
+| `style` | `CSSProperties` | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/primitives/SketchVerticalDivider.tsx).

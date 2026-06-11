@@ -1,0 +1,40 @@
+---
+title: Dropdown
+description: SketchDropdown — a hand-drawn dropdown menu anchored to any trigger element.
+---
+
+`SketchDropdown` renders a rough.js panel below a trigger when clicked, and closes
+it on outside click. Pass any element as `trigger` and `SketchListItem` nodes as
+children.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchDropdown } from "blackchalk";
+import { SketchButton } from "blackchalk";
+import { SketchListItem } from "blackchalk";
+
+<SketchDropdown trigger={<SketchButton>Options</SketchButton>}>
+  <SketchListItem onClick={() => alert("Edit")}>Edit</SketchListItem>
+  <SketchListItem onClick={() => alert("Duplicate")}>Duplicate</SketchListItem>
+  <SketchListItem onClick={() => alert("Delete")}>Delete</SketchListItem>
+</SketchDropdown>`}
+>
+  <div style={{ padding: 24 }}>
+    <SketchDropdown trigger={<SketchButton>Options</SketchButton>}>
+      <SketchListItem>Edit</SketchListItem>
+      <SketchListItem>Duplicate</SketchListItem>
+      <SketchListItem>Delete</SketchListItem>
+    </SketchDropdown>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type        | Default |
+| ---------- | ----------- | ------- |
+| `trigger`  | `ReactNode` | —       |
+| `children` | `ReactNode` | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchdropdown--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchDropdown.tsx).

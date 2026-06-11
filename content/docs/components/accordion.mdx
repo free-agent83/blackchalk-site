@@ -1,0 +1,69 @@
+---
+title: Accordion
+description: SketchAccordion — expand/collapse sections with hand-drawn dividers and an animated chevron.
+---
+
+`SketchAccordion` renders a list of collapsible panels separated by rough.js
+dividers. The chevron rotates on open, height animates with a spring, and a
+single panel is open at a time by default.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchAccordion } from "blackchalk";
+
+const items = [
+  { title: "What is Blackchalk?", content: "A hand-drawn, monochrome React UI kit built on rough.js." },
+  { title: "Is it responsive?", content: "Yes — components collapse and reflow on small screens." },
+  { title: "Can I theme it?", content: "Light and dark, derived from a single ink token." },
+];
+
+<SketchAccordion items={items} defaultOpen={[0]} />`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchAccordion
+      items={[
+        { title: "What is Blackchalk?", content: "A hand-drawn, monochrome React UI kit built on rough.js." },
+        { title: "Is it responsive?", content: "Yes — components collapse and reflow on small screens." },
+        { title: "Can I theme it?", content: "Light and dark, derived from a single ink token." },
+      ]}
+      defaultOpen={[0]}
+    />
+  </div>
+</ComponentPreview>
+
+## Multiple open
+
+Pass `allowMultiple` to let more than one panel stay open at the same time.
+
+<ComponentPreview
+  code={`<SketchAccordion
+  items={items}
+  allowMultiple
+  defaultOpen={[0, 1]}
+/>`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchAccordion
+      items={[
+        { title: "What is Blackchalk?", content: "A hand-drawn, monochrome React UI kit built on rough.js." },
+        { title: "Is it responsive?", content: "Yes — components collapse and reflow on small screens." },
+        { title: "Can I theme it?", content: "Light and dark, derived from a single ink token." },
+      ]}
+      allowMultiple
+      defaultOpen={[0, 1]}
+    />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop            | Type                                    | Default |
+| --------------- | --------------------------------------- | ------- |
+| `items`         | `{ title: string, content: ReactNode }[]` | —      |
+| `allowMultiple` | `boolean`                               | `false` |
+| `defaultOpen`   | `number[]`                              | `[]`    |
+| `style`         | `CSSProperties`                         | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchaccordion--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchAccordion.tsx).

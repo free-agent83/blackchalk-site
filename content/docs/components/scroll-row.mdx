@@ -1,0 +1,49 @@
+---
+title: Scroll Row
+description: SketchScrollRow — a horizontally scrollable row with fade-edge overflow cues.
+---
+
+`SketchScrollRow` wraps any set of children in a hidden-scrollbar horizontal strip.
+When content overflows it shows sketch-tinted fade gradients on the left and/or right
+edges to hint at more items, and clicking any scroll item snaps it to center.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchScrollRow, SketchCard } from "blackchalk";
+
+<div style={{ maxWidth: 360 }}>
+  <SketchScrollRow>
+    {Array.from({ length: 12 }).map((_, i) => (
+      <div key={i} style={{ marginRight: 12 }}>
+        <SketchCard style={{ width: 120, padding: 24, textAlign: "center" }}>
+          Card {i + 1}
+        </SketchCard>
+      </div>
+    ))}
+  </SketchScrollRow>
+</div>`}
+>
+  <div style={{ width: 360, maxWidth: "100%" }}>
+    <SketchScrollRow>
+      {Array.from({ length: 12 }).map((_, i) => (
+        <div key={i} style={{ marginRight: 12 }}>
+          <SketchCard style={{ width: 120, padding: 24, textAlign: "center" }}>
+            Card {i + 1}
+          </SketchCard>
+        </div>
+      ))}
+    </SketchScrollRow>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop        | Type                                                                  | Default |
+| ----------- | --------------------------------------------------------------------- | ------- |
+| `children`  | `ReactNode`                                                           | —       |
+| `scrollRef` | `MutableRefObject<HTMLDivElement \| null> \| RefCallback<HTMLDivElement \| null>` | — |
+| `onScroll`  | `(e: Event) => void`                                                  | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchscrollrow--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchScrollRow.tsx).

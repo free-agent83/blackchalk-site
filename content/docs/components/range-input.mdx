@@ -1,0 +1,72 @@
+---
+title: Range Input
+description: SketchRangeInput — a hand-drawn dual-field range input for min/max values.
+---
+
+`SketchRangeInput` renders two rough.js bordered text fields separated by a dash,
+letting users enter a numeric range. It fills the width of its container, so wrap
+it to size it.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchRangeInput } from "blackchalk";
+import { useState } from "react";
+
+const [min, setMin] = useState("");
+const [max, setMax] = useState("");
+
+<div style={{ width: 320 }}>
+  <SketchRangeInput
+    min={min}
+    max={max}
+    onMinChange={setMin}
+    onMaxChange={setMax}
+  />
+</div>`}
+>
+  <div style={{ width: 320, maxWidth: "100%" }}>
+    <SketchRangeInput min="" max="" />
+  </div>
+</ComponentPreview>
+
+## With unit
+
+<ComponentPreview
+  code={`import { SketchRangeInput } from "blackchalk";
+import { useState } from "react";
+
+const [min, setMin] = useState("100");
+const [max, setMax] = useState("500");
+
+<div style={{ width: 320 }}>
+  <SketchRangeInput
+    min={min}
+    max={max}
+    unit="kg"
+    onMinChange={setMin}
+    onMaxChange={setMax}
+  />
+</div>`}
+>
+  <div style={{ width: 320, maxWidth: "100%" }}>
+    <SketchRangeInput min="100" max="500" unit="kg" />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop               | Type                        | Default |
+| ------------------ | --------------------------- | ------- |
+| `min`              | `string`                    | —       |
+| `max`              | `string`                    | —       |
+| `unit`             | `string`                    | —       |
+| `minPlaceholder`   | `string`                    | `"Min"` |
+| `maxPlaceholder`   | `string`                    | `"Max"` |
+| `disabled`         | `boolean`                   | —       |
+| `onMinChange`      | `(value: string) => void`   | —       |
+| `onMaxChange`      | `(value: string) => void`   | —       |
+| `style`            | `CSSProperties`             | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchrangeinput--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchRangeInput.tsx).

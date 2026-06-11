@@ -1,0 +1,57 @@
+---
+title: Section
+description: SketchSection — a layout wrapper that groups content under an optional title and description.
+---
+
+`SketchSection` provides a consistent vertical rhythm for settings pages and
+content areas. Pass a `title` and optional `description` to render a heading
+block above any children you place inside.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchSection, SketchCard } from "blackchalk";
+
+<SketchSection
+  title="Notifications"
+  description="Choose how you want to be notified."
+>
+  <SketchCard style={{ padding: 24 }}>Section body content.</SketchCard>
+</SketchSection>`}
+>
+  <div style={{ width: 480, maxWidth: "100%" }}>
+    <SketchSection
+      title="Notifications"
+      description="Choose how you want to be notified."
+    >
+      <SketchCard style={{ padding: 24 }}>Section body content.</SketchCard>
+    </SketchSection>
+  </div>
+</ComponentPreview>
+
+## Title only
+
+<ComponentPreview
+  code={`import { SketchSection, SketchCard } from "blackchalk";
+
+<SketchSection title="Danger zone">
+  <SketchCard style={{ padding: 24 }}>Delete this workspace.</SketchCard>
+</SketchSection>`}
+>
+  <div style={{ width: 480, maxWidth: "100%" }}>
+    <SketchSection title="Danger zone">
+      <SketchCard style={{ padding: 24 }}>Delete this workspace.</SketchCard>
+    </SketchSection>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop          | Type        | Default |
+| ------------- | ----------- | ------- |
+| `title`       | `string`    | —       |
+| `description` | `string`    | —       |
+| `children`    | `ReactNode` | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/patterns-sketchsection--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/patterns/SketchSection.tsx).

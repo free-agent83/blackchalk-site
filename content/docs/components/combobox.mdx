@@ -1,0 +1,65 @@
+---
+title: Combobox
+description: SketchCombobox — a searchable select with a hand-drawn dropdown panel.
+---
+
+`SketchCombobox` combines a text field with a filtered option list: as you type,
+the dropdown narrows to matching entries. The panel animates in with a sketchy
+spring and is drawn with `SketchCard` to match the rest of the library.
+
+## Default
+
+<ComponentPreview
+  code={`import { useState } from "react";
+import { SketchCombobox } from "blackchalk";
+
+const options = [
+  { label: "Apple", value: "apple" },
+  { label: "Apricot", value: "apricot" },
+  { label: "Banana", value: "banana" },
+  { label: "Blackberry", value: "blackberry" },
+  { label: "Cherry", value: "cherry" },
+  { label: "Grapefruit", value: "grapefruit" },
+];
+
+export default function Demo() {
+  const [v, setV] = useState("");
+  return (
+    <div style={{ width: 280 }}>
+      <SketchCombobox
+        options={options}
+        value={v}
+        onChange={setV}
+        placeholder="Search fruit…"
+      />
+    </div>
+  );
+}`}
+>
+  <div style={{ width: 280, maxWidth: "100%" }}>
+    <SketchCombobox
+      options={[
+        { label: "Apple", value: "apple" },
+        { label: "Apricot", value: "apricot" },
+        { label: "Banana", value: "banana" },
+        { label: "Blackberry", value: "blackberry" },
+        { label: "Cherry", value: "cherry" },
+        { label: "Grapefruit", value: "grapefruit" },
+      ]}
+      placeholder="Search fruit…"
+    />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop          | Type                                    | Default     |
+| ------------- | --------------------------------------- | ----------- |
+| `options`     | `{ label: string; value: string }[]`    | —           |
+| `value`       | `string`                                | —           |
+| `onChange`    | `(value: string) => void`               | —           |
+| `placeholder` | `string`                                | `"Search…"` |
+| `style`       | `CSSProperties`                         | —           |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchcombobox--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchCombobox.tsx).

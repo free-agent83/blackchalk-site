@@ -1,0 +1,62 @@
+---
+title: Cart Summary
+description: SketchCartSummary — a hand-drawn order summary card with subtotal, tax, shipping, and a checkout button.
+---
+
+`SketchCartSummary` renders a rough.js-styled card listing order line items and a
+total, with an optional **Checkout** button. Pass only the rows you need — `tax`
+and `shipping` are optional and are omitted from the card when not provided.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchCartSummary } from "blackchalk";
+
+<SketchCartSummary
+  subtotal="155.50"
+  tax="12.44"
+  shipping="8.00"
+  total="175.94"
+/>`}
+>
+  <div style={{ width: 320, maxWidth: "100%" }}>
+    <SketchCartSummary
+      subtotal="155.50"
+      tax="12.44"
+      shipping="8.00"
+      total="175.94"
+    />
+  </div>
+</ComponentPreview>
+
+## Subtotal only
+
+When `tax` and `shipping` are omitted the divider sits directly above the total,
+keeping the card compact.
+
+<ComponentPreview
+  code={`<SketchCartSummary
+  subtotal="42.50"
+  total="42.50"
+/>`}
+>
+  <div style={{ width: 320, maxWidth: "100%" }}>
+    <SketchCartSummary
+      subtotal="42.50"
+      total="42.50"
+    />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop         | Type         | Default |
+| ------------ | ------------ | ------- |
+| `subtotal`   | `string`     | —       |
+| `tax`        | `string`     | —       |
+| `shipping`   | `string`     | —       |
+| `total`      | `string`     | —       |
+| `onCheckout` | `() => void` | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/ecommerce-sketchcartsummary--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/ecommerce/SketchCartSummary.tsx).

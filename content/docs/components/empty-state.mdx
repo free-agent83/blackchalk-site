@@ -1,0 +1,57 @@
+---
+title: Empty State
+description: SketchEmptyState — a centered placeholder with an icon, message, and optional call to action.
+---
+
+`SketchEmptyState` renders a "no data / nothing here yet" placeholder — a sketched
+icon, a title, an optional description, and an optional action. Drop it into any
+empty list, table, or screen in a low-fidelity wireframe.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchEmptyState, SketchButton } from "blackchalk";
+
+<SketchEmptyState
+  title="No sketches yet"
+  description="Create your first sketch to start prototyping."
+  action={<SketchButton>New sketch</SketchButton>}
+/>`}
+>
+  <SketchEmptyState
+    title="No sketches yet"
+    description="Create your first sketch to start prototyping."
+    action={<SketchButton>New sketch</SketchButton>}
+  />
+</ComponentPreview>
+
+## With icon
+
+<ComponentPreview
+  code={`import { SketchEmptyState } from "blackchalk";
+
+<SketchEmptyState
+  icon="search"
+  title="No results"
+  description="Try a different search term."
+/>`}
+>
+  <SketchEmptyState
+    icon="search"
+    title="No results"
+    description="Try a different search term."
+  />
+</ComponentPreview>
+
+## Props
+
+| Prop          | Type                  | Default   |
+| ------------- | --------------------- | --------- |
+| `title`       | `string`              | —         |
+| `icon`        | `IconName`            | `"inbox"` |
+| `description` | `string`              | —         |
+| `action`      | `ReactNode`           | —         |
+| `style`       | `CSSProperties`       | —         |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/feedback-sketchemptystate--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/feedback/SketchEmptyState.tsx).

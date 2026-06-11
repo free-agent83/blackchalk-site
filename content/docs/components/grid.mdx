@@ -1,0 +1,62 @@
+---
+title: Grid
+description: SketchGrid — a responsive hand-drawn grid layout.
+---
+
+`SketchGrid` arranges children into a responsive CSS grid that collapses columns
+on narrow screens without media queries. Pair it with `SketchCard` or any other
+block-level children.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchGrid, SketchCard } from "blackchalk";
+
+<SketchGrid>
+  <SketchCard style={{ padding: 24, textAlign: "center" }}>Item 1</SketchCard>
+  <SketchCard style={{ padding: 24, textAlign: "center" }}>Item 2</SketchCard>
+  <SketchCard style={{ padding: 24, textAlign: "center" }}>Item 3</SketchCard>
+</SketchGrid>`}
+>
+  <div style={{ width: 480, maxWidth: "100%" }}>
+    <SketchGrid>
+      <SketchCard style={{ padding: 24, textAlign: "center" }}>Item 1</SketchCard>
+      <SketchCard style={{ padding: 24, textAlign: "center" }}>Item 2</SketchCard>
+      <SketchCard style={{ padding: 24, textAlign: "center" }}>Item 3</SketchCard>
+    </SketchGrid>
+  </div>
+</ComponentPreview>
+
+## Four columns
+
+<ComponentPreview
+  code={`import { SketchGrid, SketchCard } from "blackchalk";
+
+<SketchGrid columns={4} gap={24}>
+  <SketchCard style={{ padding: 24, textAlign: "center" }}>Item 1</SketchCard>
+  <SketchCard style={{ padding: 24, textAlign: "center" }}>Item 2</SketchCard>
+  <SketchCard style={{ padding: 24, textAlign: "center" }}>Item 3</SketchCard>
+  <SketchCard style={{ padding: 24, textAlign: "center" }}>Item 4</SketchCard>
+</SketchGrid>`}
+>
+  <div style={{ width: 480, maxWidth: "100%" }}>
+    <SketchGrid columns={4} gap={24}>
+      <SketchCard style={{ padding: 24, textAlign: "center" }}>Item 1</SketchCard>
+      <SketchCard style={{ padding: 24, textAlign: "center" }}>Item 2</SketchCard>
+      <SketchCard style={{ padding: 24, textAlign: "center" }}>Item 3</SketchCard>
+      <SketchCard style={{ padding: 24, textAlign: "center" }}>Item 4</SketchCard>
+    </SketchGrid>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop          | Type        | Default                      |
+| ------------- | ----------- | ---------------------------- |
+| `children`    | `ReactNode` | —                            |
+| `columns`     | `number`    | `3`                          |
+| `gap`         | `number`    | `16`                         |
+| `minColWidth` | `number`    | `Math.max(120, 880/columns)` |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/layout-sketchgrid--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/layout/SketchGrid.tsx).

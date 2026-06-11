@@ -1,0 +1,49 @@
+---
+title: Page Layout
+description: SketchPageLayout — a simple column layout with an optional sticky header slot and a scrollable body region.
+---
+
+`SketchPageLayout` stacks an optional `header` above a scrollable body region,
+adding bottom breathing room (`paddingBottom: 80`) beneath the content.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchPageLayout } from "blackchalk";
+
+<SketchPageLayout
+  header={
+    <div style={{ padding: 24, borderBottom: "1px solid var(--sketch-border)" }}>
+      <h1 style={{ margin: 0 }}>Dashboard</h1>
+    </div>
+  }
+>
+  <div style={{ padding: 24 }}>
+    <p>Page body content sits below the header with bottom breathing room.</p>
+  </div>
+</SketchPageLayout>`}
+>
+  <div style={{ width: 480, maxWidth: "100%" }}>
+    <SketchPageLayout
+      header={
+        <div style={{ padding: 24, borderBottom: "1px solid var(--sketch-border)" }}>
+          <h1 style={{ margin: 0 }}>Dashboard</h1>
+        </div>
+      }
+    >
+      <div style={{ padding: 24 }}>
+        <p>Page body content sits below the header with bottom breathing room.</p>
+      </div>
+    </SketchPageLayout>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type        | Default |
+| ---------- | ----------- | ------- |
+| `header`   | `ReactNode` | —       |
+| `children` | `ReactNode` | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/layout-sketchpagelayout--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/layout/SketchPageLayout.tsx).

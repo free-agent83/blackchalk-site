@@ -1,0 +1,45 @@
+---
+title: Stacked Bar Chart
+description: SketchStackedBarChart — a hand-drawn stacked bar chart with sketched axes.
+---
+
+`SketchStackedBarChart` plots labelled bars made up of stacked rough.js segments with sketched axes. It's
+fluid — it fills the width of its container, so wrap it to size it.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchStackedBarChart } from "blackchalk";
+
+<SketchStackedBarChart
+  data={[
+    { label: "Q1", segments: [12, 8, 5] },
+    { label: "Q2", segments: [18, 10, 6] },
+    { label: "Q3", segments: [9, 14, 7] },
+    { label: "Q4", segments: [22, 11, 9] },
+  ]}
+  height={250}
+/>`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchStackedBarChart
+      data={[
+        { label: "Q1", segments: [12, 8, 5] },
+        { label: "Q2", segments: [18, 10, 6] },
+        { label: "Q3", segments: [9, 14, 7] },
+        { label: "Q4", segments: [22, 11, 9] },
+      ]}
+      height={250}
+    />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop     | Type                                          | Default |
+| -------- | --------------------------------------------- | ------- |
+| `data`   | `{ label: string; segments: number[] }[]`     | —       |
+| `height` | `number`                                      | `250`   |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/charts-sketchstackedbarchart--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/charts/SketchStackedBarChart.tsx).

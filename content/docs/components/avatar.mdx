@@ -1,0 +1,45 @@
+---
+title: Avatar
+description: SketchAvatar — a hand-drawn initials avatar with a rough.js circle border.
+---
+
+`SketchAvatar` renders up to two initials inside a sketched circle — a low-fidelity
+identity placeholder that fits naturally alongside other hand-drawn components.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchAvatar } from "blackchalk";
+
+<SketchAvatar initials="AL" />`}
+>
+  <SketchAvatar initials="AL" />
+</ComponentPreview>
+
+## Group
+
+<ComponentPreview
+  code={`import { SketchAvatar } from "blackchalk";
+
+<div style={{ display: "flex", gap: 8 }}>
+  <SketchAvatar initials="AL" />
+  <SketchAvatar initials="AT" />
+  <SketchAvatar initials="GH" size={64} />
+</div>`}
+>
+  <div style={{ display: "flex", gap: 8 }}>
+    <SketchAvatar initials="AL" />
+    <SketchAvatar initials="AT" />
+    <SketchAvatar initials="GH" size={64} />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type     | Default |
+| ---------- | -------- | ------- |
+| `initials` | `string` | —       |
+| `size`     | `number` | `40`    |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchavatar--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchAvatar.tsx).

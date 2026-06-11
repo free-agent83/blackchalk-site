@@ -1,0 +1,33 @@
+---
+title: List Item
+description: SketchListItem — a hand-drawn row for building sketch-style lists.
+---
+
+`SketchListItem` renders a single padded row that inherits the sketch font and
+foreground colour. Mark it `active` to highlight the selected state, or pass
+`onClick` to make it interactive (pointer cursor + hover ink).
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchListItem } from "blackchalk";
+
+<SketchListItem>A plain list item</SketchListItem>
+<SketchListItem active>An active list item</SketchListItem>
+<SketchListItem onClick={() => alert("Clicked")}>Click me</SketchListItem>`}
+>
+  <SketchListItem>A plain list item</SketchListItem>
+  <SketchListItem active>An active list item</SketchListItem>
+  <SketchListItem>A third list item</SketchListItem>
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type        | Default |
+| ---------- | ----------- | ------- |
+| `children` | `ReactNode` | —       |
+| `active`   | `boolean`   | —       |
+| `onClick`  | `() => void` | —      |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchlistitem--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchListItem.tsx).

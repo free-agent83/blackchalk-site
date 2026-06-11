@@ -1,0 +1,62 @@
+---
+title: Settings Layout
+description: SketchSettingsLayout — a two-column settings shell with a nav sidebar and a main content area.
+---
+
+`SketchSettingsLayout` arranges a navigation sidebar alongside a content area using
+a flex-wrap layout: the two columns sit side-by-side on wide containers and stack
+vertically on narrow ones. Pass any node as `nav` and put page content in
+`children`.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchSettingsLayout, SketchCard } from "blackchalk";
+
+const Nav = () => (
+  <SketchCard style={{ padding: 16 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+      <strong>Profile</strong>
+      <span>Account</span>
+      <span>Billing</span>
+    </div>
+  </SketchCard>
+);
+
+<SketchSettingsLayout nav={<Nav />}>
+  <SketchCard style={{ padding: 24 }}>
+    <h2 style={{ marginTop: 0 }}>Profile</h2>
+    <p>Settings content sits to the right of the navigation column.</p>
+  </SketchCard>
+</SketchSettingsLayout>`}
+>
+  <div style={{ width: 480, maxWidth: "100%" }}>
+    <SketchSettingsLayout
+      nav={
+        <SketchCard style={{ padding: 16 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            <strong>Profile</strong>
+            <span>Account</span>
+            <span>Billing</span>
+          </div>
+        </SketchCard>
+      }
+    >
+      <SketchCard style={{ padding: 24 }}>
+        <h2 style={{ marginTop: 0 }}>Profile</h2>
+        <p>Settings content sits to the right of the navigation column.</p>
+      </SketchCard>
+    </SketchSettingsLayout>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop       | Type        | Default |
+| ---------- | ----------- | ------- |
+| `nav`      | `ReactNode` | —       |
+| `children` | `ReactNode` | —       |
+| `navWidth` | `number`    | `220`   |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/patterns-sketchsettingslayout--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/patterns/SketchSettingsLayout.tsx).

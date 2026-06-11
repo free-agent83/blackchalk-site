@@ -1,0 +1,62 @@
+---
+title: Compare Table
+description: SketchCompareTable — a hand-drawn side-by-side product comparison table.
+---
+
+`SketchCompareTable` renders a rough.js-styled card with a header row of product
+names and zebra-striped attribute rows beneath, separated by sketched dividers. It
+fills the width of its container, so wrap it to size it.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchCompareTable } from "blackchalk";
+
+<SketchCompareTable
+  attributes={["Price", "Weight", "Battery", "Warranty"]}
+  products={[
+    {
+      name: "Basic",
+      attributes: { Price: "$49", Weight: "220g", Battery: "8 hrs", Warranty: "1 year" },
+    },
+    {
+      name: "Pro",
+      attributes: { Price: "$99", Weight: "180g", Battery: "16 hrs", Warranty: "2 years" },
+    },
+    {
+      name: "Max",
+      attributes: { Price: "$149", Weight: "160g", Battery: "30 hrs", Warranty: "3 years" },
+    },
+  ]}
+/>`}
+>
+  <div style={{ width: 420, maxWidth: "100%" }}>
+    <SketchCompareTable
+      attributes={["Price", "Weight", "Battery", "Warranty"]}
+      products={[
+        {
+          name: "Basic",
+          attributes: { Price: "$49", Weight: "220g", Battery: "8 hrs", Warranty: "1 year" },
+        },
+        {
+          name: "Pro",
+          attributes: { Price: "$99", Weight: "180g", Battery: "16 hrs", Warranty: "2 years" },
+        },
+        {
+          name: "Max",
+          attributes: { Price: "$149", Weight: "160g", Battery: "30 hrs", Warranty: "3 years" },
+        },
+      ]}
+    />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop         | Type                                                       | Default |
+| ------------ | ---------------------------------------------------------- | ------- |
+| `products`   | `{ name: string; attributes: Record<string, string> }[]`  | —       |
+| `attributes` | `string[]`                                                 | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/ecommerce-sketchcomparetable--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/ecommerce/SketchCompareTable.tsx).

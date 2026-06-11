@@ -1,0 +1,37 @@
+---
+title: Price Tag
+description: SketchPriceTag — a hand-drawn price display with optional strikethrough original price.
+---
+
+`SketchPriceTag` renders a current price with an optional strikethrough original price beside it — useful for showing discounts in a sketch-styled UI.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchPriceTag } from "blackchalk";
+
+<SketchPriceTag price="42.50" />`}
+>
+  <SketchPriceTag price="42.50" />
+</ComponentPreview>
+
+## Discounted
+
+<ComponentPreview
+  code={`import { SketchPriceTag } from "blackchalk";
+
+<SketchPriceTag price="89.00" originalPrice="129.00" />`}
+>
+  <SketchPriceTag price="89.00" originalPrice="129.00" />
+</ComponentPreview>
+
+## Props
+
+| Prop            | Type     | Default |
+| --------------- | -------- | ------- |
+| `price`         | `string` | —       |
+| `originalPrice` | `string` | —       |
+| `currency`      | `string` | `"$"`   |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/ecommerce-sketchpricetag--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/ecommerce/SketchPriceTag.tsx).

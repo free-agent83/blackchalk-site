@@ -1,0 +1,48 @@
+---
+title: List
+description: SketchList — a hand-drawn list of items separated by sketched dividers.
+---
+
+`SketchList` wraps any number of `SketchListItem` children and places a rough.js
+divider between each one. Items can be marked active or made clickable.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchList, SketchListItem } from "blackchalk";
+
+<SketchList>
+  <SketchListItem>Inbox</SketchListItem>
+  <SketchListItem active>Starred</SketchListItem>
+  <SketchListItem>Sent</SketchListItem>
+  <SketchListItem>Drafts</SketchListItem>
+</SketchList>`}
+>
+  <div style={{ width: 320, maxWidth: "100%" }}>
+    <SketchList>
+      <SketchListItem>Inbox</SketchListItem>
+      <SketchListItem active>Starred</SketchListItem>
+      <SketchListItem>Sent</SketchListItem>
+      <SketchListItem>Drafts</SketchListItem>
+    </SketchList>
+  </div>
+</ComponentPreview>
+
+## Props
+
+### SketchList
+
+| Prop       | Type        | Default |
+| ---------- | ----------- | ------- |
+| `children` | `ReactNode` | —       |
+
+### SketchListItem
+
+| Prop       | Type         | Default |
+| ---------- | ------------ | ------- |
+| `children` | `ReactNode`  | —       |
+| `active`   | `boolean`    | —       |
+| `onClick`  | `() => void` | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchlist--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchList.tsx).

@@ -1,0 +1,53 @@
+---
+title: Sidebar
+description: SketchSidebar — a hand-drawn navigation sidebar with optional icons and active-item highlighting.
+---
+
+`SketchSidebar` renders a vertical nav list where the active item gets a rough.js
+filled highlight. Each item can carry a named icon or a custom React node, a label,
+and an `onClick` handler.
+
+## Default
+
+<ComponentPreview
+  code={`import { SketchSidebar } from "blackchalk";
+
+<SketchSidebar
+  items={[
+    { icon: "home", label: "Dashboard", active: true, onClick: () => {} },
+    { icon: "search", label: "Explore", onClick: () => {} },
+    { icon: "user", label: "Profile", onClick: () => {} },
+    { icon: "settings", label: "Settings", onClick: () => {} },
+  ]}
+/>`}
+>
+  <div style={{ width: 240, maxWidth: "100%", height: 240, display: "flex" }}>
+    <SketchSidebar
+      items={[
+        { icon: "home", label: "Dashboard", active: true },
+        { icon: "search", label: "Explore" },
+        { icon: "user", label: "Profile" },
+        { icon: "settings", label: "Settings" },
+      ]}
+    />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop    | Type                            | Default |
+| ------- | ------------------------------- | ------- |
+| `items` | `SketchSidebarItem[]`           | —       |
+| `width` | `number`                        | `220`   |
+
+### SketchSidebarItem
+
+| Field     | Type                          | Default |
+| --------- | ----------------------------- | ------- |
+| `label`   | `string`                      | —       |
+| `icon`    | `ReactNode \| IconName`       | —       |
+| `active`  | `boolean`                     | —       |
+| `onClick` | `() => void`                  | —       |
+
+See it in the [Storybook playground](https://storybook.blackchalk.design/?path=/story/composed-sketchsidebar--default),
+or read the [source](https://github.com/free-agent83/blackchalk/blob/main/src/composed/SketchSidebar.tsx).
