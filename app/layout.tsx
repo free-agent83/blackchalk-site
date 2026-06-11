@@ -1,5 +1,5 @@
-import "./global.css";
 import "blackchalk/styles.css";
+import "./global.css";
 import localFont from "next/font/local";
 import { RootProvider } from "fumadocs-ui/provider/next";
 import type { Metadata } from "next";
