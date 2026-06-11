@@ -2,6 +2,7 @@ import Link from "next/link";
 import { GITHUB_URL } from "@/app/site";
 import { Cta } from "./cta";
 import { Features } from "./features";
+import { InstallCommand } from "./install-command";
 import { Showcase } from "./showcase";
 import { TechStrip } from "./tech-strip";
 
@@ -9,7 +10,7 @@ export default function HomePage() {
   return (
     <main className="flex flex-1 flex-col">
       {/* Hero */}
-      <section className="mx-auto flex w-full max-w-4xl flex-col items-center gap-6 px-4 pt-24 pb-12 text-center">
+      <section className="mx-auto flex w-full max-w-4xl flex-col items-center gap-6 px-4 pt-24 pb-24 text-center">
         <span className="rounded-full border px-3 py-1 text-xs text-fd-muted-foreground">
           Built on rough.js · MIT
         </span>
@@ -43,13 +44,11 @@ export default function HomePage() {
             View on GitHub
           </Link>
         </div>
-        <code className="mt-2 rounded-md border bg-fd-muted px-3 py-1.5 text-sm">
-          npm install blackchalk
-        </code>
+        <InstallCommand />
       </section>
 
       {/* Built with */}
-      <section className="mx-auto w-full max-w-3xl px-4 pb-16">
+      <section className="mx-auto w-full max-w-3xl px-4 pb-32">
         <p className="mb-6 text-center text-xs uppercase tracking-widest text-fd-muted-foreground">
           Built with
         </p>
@@ -57,12 +56,12 @@ export default function HomePage() {
       </section>
 
       {/* Live showcase — built from the library itself */}
-      <section className="mx-auto w-full max-w-5xl px-4 pb-20">
+      <section className="mx-auto w-full max-w-5xl px-4 pb-40">
         <Showcase />
       </section>
 
       {/* Features */}
-      <section className="mx-auto w-full max-w-5xl px-4 pb-20">
+      <section className="mx-auto w-full max-w-5xl px-4 pb-40">
         <h2 className="mb-8 text-center text-2xl font-bold tracking-tight sm:text-3xl">
           A whole sketchbook, not just a button
         </h2>
@@ -70,7 +69,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="mx-auto mb-24 w-full max-w-3xl px-4">
+      <section className="mx-auto mb-48 w-full max-w-3xl px-4">
         <Cta />
       </section>
     </main>
