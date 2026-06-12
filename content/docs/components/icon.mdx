@@ -1,0 +1,42 @@
+---
+title: Icon
+description: SketchIcon — a hand-drawn icon rendered from the library's baked icon set.
+---
+
+`SketchIcon` renders any icon from blackchalk's baked set as a sketchy,
+monochrome SVG. Pass a `name` from the `IconName` union; unknown names render a
+dashed placeholder box so generated screens never crash on a missing glyph.
+
+## Usage
+
+<ComponentPreview
+  code={`import { SketchIcon } from "blackchalk";
+
+export default function Example() {
+  return <SketchIcon name="search" size={24} />;
+}`}
+>
+  <Row>
+    <SketchIcon name="search" size={24} />
+    <SketchIcon name="settings" size={24} />
+    <SketchIcon name="heart" size={24} />
+    <SketchIcon name="trash" size={24} />
+  </Row>
+</ComponentPreview>
+
+## Props
+
+| Prop          | Type                  | Default | Description                                  |
+| ------------- | --------------------- | ------- | -------------------------------------------- |
+| `name`        | `IconName \| string`  | —       | Which icon to render.                        |
+| `size`        | `number`              | `20`    | Width and height in pixels.                  |
+| `strokeWidth` | `number`              | `1.5`   | Stroke weight of the drawn paths.            |
+| `aria-label`  | `string`              | —       | Sets `role="img"`; omit for decorative use.  |
+
+## All icons
+
+Every icon below is read from the runtime `ICON_NAMES` array, so this gallery
+always matches the installed version. Search by name, then pass the name string
+to `<SketchIcon name="…" />`.
+
+<IconGallery />

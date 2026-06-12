@@ -35,6 +35,7 @@ export {
   SketchFormRow,
   SketchFrame,
   SketchGrid,
+  SketchIcon,
   SketchIconRadio,
   SketchIconRadioGroup,
   SketchImagePlaceholder,
@@ -95,8 +96,11 @@ import {
   SketchDrawer,
   SketchModal,
   SketchToast,
+  SketchIcon,
+  SketchInput,
+  ICON_NAMES,
 } from "blackchalk";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 /** Overlay/transient components need open state, so each gets a small demo wrapper
  *  usable directly in .mdx (e.g. `<ModalDemo />`). */
@@ -174,6 +178,73 @@ export function Row({ children }: { children: React.ReactNode }) {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
       {children}
+    </div>
+  );
+}
+
+/** Searchable grid of every baked icon in the library. Reads the runtime
+ *  `ICON_NAMES` array so it always reflects the installed blackchalk version —
+ *  no manual list to keep in sync. */
+export function IconGallery() {
+  const [query, setQuery] = useState("");
+  const matches = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return q ? ICON_NAMES.filter((n) => n.includes(q)) : ICON_NAMES;
+  }, [query]);
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap" }}>
+        <div style={{ maxWidth: 240, width: "100%" }}>
+          <SketchInput
+            value={query}
+            onChange={setQuery}
+            placeholder="Search icons…"
+          />
+        </div>
+        <span style={{ fontSize: "0.85rem", opacity: 0.6 }}>
+          {matches.length} of {ICON_NAMES.length}
+        </span>
+      </div>
+
+      {matches.length === 0 ? (
+        <p style={{ opacity: 0.6, fontSize: "0.9rem" }}>No icons match “{query}”.</p>
+      ) : (
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(96px, 1fr))",
+            gap: "0.5rem",
+          }}
+        >
+          {matches.map((name) => (
+            <div
+              key={name}
+              title={name}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "0.5rem",
+                padding: "0.85rem 0.5rem",
+                textAlign: "center",
+              }}
+            >
+              <SketchIcon name={name} size={24} aria-label={name} />
+              <code
+                style={{
+                  fontSize: "0.7rem",
+                  opacity: 0.7,
+                  wordBreak: "break-word",
+                  lineHeight: 1.2,
+                }}
+              >
+                {name}
+              </code>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
