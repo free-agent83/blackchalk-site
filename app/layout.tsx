@@ -19,11 +19,27 @@ const caveat = localFont({
   declarations: [{ prop: "size-adjust", value: "175%" }],
 });
 
+const TITLE = "blackchalk — hand-drawn React UI components";
+const DESCRIPTION =
+  "A low-fidelity, monochrome React component library built on rough.js. Wireframe-style UI that looks deliberately unfinished.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "blackchalk — hand-drawn React UI components",
-  description:
-    "A low-fidelity, monochrome React component library built on rough.js. Wireframe-style UI that looks deliberately unfinished.",
+  title: TITLE,
+  description: DESCRIPTION,
+  // og:image / twitter:image are supplied by app/opengraph-image.tsx (file convention).
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    siteName: "blackchalk",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
