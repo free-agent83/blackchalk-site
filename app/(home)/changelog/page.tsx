@@ -18,6 +18,38 @@ type Release = {
  */
 const RELEASES: Release[] = [
   {
+    version: "0.3.0",
+    date: "July 2026",
+    summary: "Accessibility overhaul — the library is now axe-clean.",
+    changes: [
+      "Full keyboard operability: tabs, select, combobox, dropdown, date-picker grid, radios and rating",
+      "Accessible names + ARIA roles across inputs, dialogs, tooltips, pagination and steppers",
+      "Visible on-brand keyboard focus, plus focus trap and scroll lock for modals and drawers",
+      "Modals, dialogs and drawers now inherit a scoped dark theme",
+      "New SketchRangeSlider — a two-handle min/max slider",
+      "Prepublish accessibility regression gate keeps releases axe-clean",
+    ],
+  },
+  {
+    version: "0.2.1",
+    date: "June 2026",
+    summary: "Fill-token refinements for consistent rough.js backgrounds.",
+    changes: [
+      "Background fills split by semantic role — object fills vs state fills",
+      "Image placeholder uses the faint object fill",
+    ],
+  },
+  {
+    version: "0.2.0",
+    date: "June 2026",
+    summary: "Fluid charts and rough.js fills across surfaces.",
+    changes: [
+      "Charts re-render fluidly via ResizeObserver",
+      "Rough.js fills on skeleton blocks and table zebra stripes",
+      "Assorted visual polish across components",
+    ],
+  },
+  {
     version: "0.1.1",
     date: "2026",
     summary: "Visual and responsive polish from the first design review.",
