@@ -1,6 +1,7 @@
 import "blackchalk/styles.css";
 import "./global.css";
 import localFont from "next/font/local";
+import Script from "next/script";
 import { RootProvider } from "fumadocs-ui/provider/next";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
@@ -47,6 +48,17 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" suppressHydrationWarning className={caveat.variable}>
       <body className="flex min-h-screen flex-col">
         <RootProvider>{children}</RootProvider>
+        {/* Google Analytics (GA4) — blackchalk.design */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-DYTQWMY2M6"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-DYTQWMY2M6');`}
+        </Script>
       </body>
     </html>
   );
